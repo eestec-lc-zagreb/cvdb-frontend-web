@@ -32,8 +32,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
   onLogout() {
   }
 
-  onLocaleChange(event: MdButtonToggleChange) {
-    this.locale.setCurrentLanguage(event.value);
+  setLocale(locale: string) {
+    if (locale === 'hr' || locale === 'en') {
+      this.locale.setCurrentLanguage(locale);
+    }
   }
 
 }

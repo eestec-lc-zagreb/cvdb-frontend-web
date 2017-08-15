@@ -9,34 +9,26 @@
     <span>{{ 'AboutUs' | translate:lang }}</span>
   </button>
 
-  <md-button-toggle-group
-    #group="mdButtonToggleGroup"
-    (change)="onLocaleChange($event)">
-    <md-button-toggle
-      value="hr"
-      [checked]="lang === 'hr'">
-      <span>HR</span>
-    </md-button-toggle>
-    <md-button-toggle
-      value="en"
-      [checked]="lang === 'en'">
-      <span>EN</span>
-    </md-button-toggle>
-  </md-button-toggle-group>
+  <md-menu
+    #localeMenu="mdMenu">
 
-  <!--<md-menu-->
-    <!--#appMenu="mdMenu">-->
+    <button
+      md-menu-item
+      (click)="setLocale('en')">
+      {{ 'EnglishLanguage' | translate:lang }}
+    </button>
+    <button
+      md-menu-item
+      (click)="setLocale('hr')">
+      {{ 'CroatianLanguage' | translate:lang }}
+    </button>
+  </md-menu>
 
-    <!--<button md-menu-item (click)="onLogout()"> Odjava </button>-->
-  <!--</md-menu>-->
+  <button
+    md-icon-button
+    [mdMenuTriggerFor]="localeMenu">
 
-  <!--<button-->
-    <!--md-button-->
-    <!--[mdMenuTriggerFor]="appMenu"-->
-    <!--*ngIf="user != null">-->
-
-    <!--<md-icon>person</md-icon>-->
-    <!--{{ user.userInfo.username }}-->
-  <!--</button>-->
+    <md-icon>language</md-icon>
+  </button>
 
 </md-toolbar>
