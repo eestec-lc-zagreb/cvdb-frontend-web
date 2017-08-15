@@ -1,0 +1,27 @@
+<md-toolbar color="primary">
+  <span>EESTEC LC Zagreb</span>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="fill-remaining-space"></span>
+
+  <button md-button>
+    <md-icon>info</md-icon>
+    O nama
+  </button>
+
+  <md-menu
+    #appMenu="mdMenu">
+
+    <button md-menu-item (click)="onLogout()"> Odjava </button>
+  </md-menu>
+
+  <button
+    md-button
+    [mdMenuTriggerFor]="appMenu"
+    *ngIf="user != null">
+
+    <md-icon>person</md-icon>
+    {{ user.userInfo.username }}
+  </button>
+
+</md-toolbar>
