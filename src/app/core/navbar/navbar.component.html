@@ -6,22 +6,37 @@
 
   <button md-button>
     <md-icon>info</md-icon>
-    O nama
+    <span>{{ 'AboutUs' | translate:lang }}</span>
   </button>
 
-  <md-menu
-    #appMenu="mdMenu">
+  <md-button-toggle-group
+    #group="mdButtonToggleGroup"
+    (change)="onLocaleChange($event)">
+    <md-button-toggle
+      value="hr"
+      [checked]="lang === 'hr'">
+      <span>HR</span>
+    </md-button-toggle>
+    <md-button-toggle
+      value="en"
+      [checked]="lang === 'en'">
+      <span>EN</span>
+    </md-button-toggle>
+  </md-button-toggle-group>
 
-    <button md-menu-item (click)="onLogout()"> Odjava </button>
-  </md-menu>
+  <!--<md-menu-->
+    <!--#appMenu="mdMenu">-->
 
-  <button
-    md-button
-    [mdMenuTriggerFor]="appMenu"
-    *ngIf="user != null">
+    <!--<button md-menu-item (click)="onLogout()"> Odjava </button>-->
+  <!--</md-menu>-->
 
-    <md-icon>person</md-icon>
-    {{ user.userInfo.username }}
-  </button>
+  <!--<button-->
+    <!--md-button-->
+    <!--[mdMenuTriggerFor]="appMenu"-->
+    <!--*ngIf="user != null">-->
+
+    <!--<md-icon>person</md-icon>-->
+    <!--{{ user.userInfo.username }}-->
+  <!--</button>-->
 
 </md-toolbar>

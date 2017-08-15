@@ -9,6 +9,7 @@ import { MaterialDesignModule } from './shared/material-design.module';
 import { DialogComponent } from './shared/dialog/dialog.component';
 import { NavbarComponent } from './core/navbar/navbar.component';
 import { AlertService } from './core/alert.service';
+import { LocaleService, LocalizationModule, TranslationService } from 'angular-l10n';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AlertService } from './core/alert.service';
     BrowserAnimationsModule,
     HttpModule,
     AppRoutingModule,
-    MaterialDesignModule
+    MaterialDesignModule,
+    LocalizationModule.forRoot()
   ],
   providers: [
     AlertService
@@ -32,4 +34,18 @@ import { AlertService } from './core/alert.service';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+  constructor(public locale: LocaleService, public translation: TranslationService) {
+    this.locale.addConfiguration()
+      .addLanguages(['en', 'hr'])
+      .setCookieExpiration(30)
+      .defineDefaultLocale('hr', 'HR')
+      .defineCurrency('HRK');
+
+    this.translation.addConfiguration()
+      .addProvider('./assets/locales/locale-');
+
+    this.translation.init();
+  }
+}

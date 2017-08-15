@@ -1,6 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { AlertService } from '../alert.service';
+import { MdButtonToggleChange } from '@angular/material';
+import { Language, LocaleService } from 'angular-l10n';
 
 @Component({
   selector: 'app-navbar',
@@ -13,7 +15,9 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   userLoggedInSubscription: Subscription;
 
-  constructor(private alertService: AlertService) {
+  @Language() lang: string;
+
+  constructor(private alertService: AlertService, private locale: LocaleService) {
   }
 
   ngOnInit() {
@@ -26,6 +30,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   onLogout() {
+  }
+
+  onLocaleChange(event: MdButtonToggleChange) {
+    this.locale.setCurrentLanguage(event.value);
   }
 
 }
