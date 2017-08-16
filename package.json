@@ -4,10 +4,10 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
+    "start": "node_modules/@angular/cli/bin/ng serve --proxy-config ./proxy.conf.json",
+    "build": "ng build --prod --aot",
+    "test": "node_modules/@angular/cli/bin/ng test --progress=false --browsers=ChromeHeadless --singleRun",
+    "lint": "node_modules/@angular/cli/bin/ng lint",
     "e2e": "ng e2e"
   },
   "private": true,
