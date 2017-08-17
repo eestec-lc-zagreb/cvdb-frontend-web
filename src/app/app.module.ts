@@ -11,6 +11,7 @@ import { NavbarComponent } from './core/navbar/navbar.component';
 import { AlertService } from './core/alert.service';
 import { LocaleService, LocalizationModule, TranslationService } from 'angular-l10n';
 import { LoginComponent } from './authentication/login/login.component';
+import { AuthenticationService } from './authentication/shared/authentication.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { LoginComponent } from './authentication/login/login.component';
     LocalizationModule.forRoot()
   ],
   providers: [
-    AlertService
+    AlertService,
+    AuthenticationService
   ],
   entryComponents: [
     DialogComponent

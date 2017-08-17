@@ -8,7 +8,7 @@
 
       <md-toolbar>{{ 'LoginWelcome' | translate:lang }}</md-toolbar>
 
-      <form (submit)="login()">
+      <form #loginForm="ngForm" (submit)="login(loginForm)">
         <br>
         <md-input-container style="width: 100%">
           <input
