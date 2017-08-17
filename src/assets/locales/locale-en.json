@@ -1,5 +1,8 @@
 {
-  "AboutUs": "About us",
   "CroatianLanguage": "Croatian",
-  "EnglishLanguage": "English"
+  "EnglishLanguage": "English",
+  "LoginWelcome": "Welcome to CV database",
+  "UsernamePlaceholder": "Username",
+  "PasswordPlaceholder": "Password",
+  "LoginButtonText": "Login"
 }

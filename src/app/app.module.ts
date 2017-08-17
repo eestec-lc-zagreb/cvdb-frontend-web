@@ -10,12 +10,14 @@ import { DialogComponent } from './shared/dialog/dialog.component';
 import { NavbarComponent } from './core/navbar/navbar.component';
 import { AlertService } from './core/alert.service';
 import { LocaleService, LocalizationModule, TranslationService } from 'angular-l10n';
+import { LoginComponent } from './authentication/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DialogComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,8 @@
 {
-  "AboutUs": "O nama",
   "CroatianLanguage": "Hrvatski",
-  "EnglishLanguage": "Engleski"
+  "EnglishLanguage": "Engleski",
+  "LoginWelcome": "Dobrodošli u bazu životopisa",
+  "UsernamePlaceholder": "Korisničko ime",
+  "PasswordPlaceholder": "Lozinka",
+  "LoginButtonText": "Prijava"
 }

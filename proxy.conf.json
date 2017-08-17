@@ -1,12 +1,6 @@
 {
-  "/auth": {
-    "target": "http://localhost:65014",
-    "secure": "false",
-    "pathRewrite": {"^/auth" : ""}
-  },
-  "/services": {
-    "target": "http://localhost:65014",
-    "secure": "false",
-    "pathRewrite": {"^/services" : ""}
+  "/api": {
+    "target": "http://localhost:61950",
+    "secure": "false"
   }
 }
