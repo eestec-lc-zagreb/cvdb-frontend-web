@@ -4,7 +4,8 @@ import { NgForm } from '@angular/forms';
 import { AuthenticationService } from '../shared/authentication.service';
 import { UserCredentials } from '../shared/user-credentials.model';
 import { AlertService } from '../../core/alert.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { LoadingBarService } from '../../core/shared/loading-bar.service';
 
 @Component({
   selector: 'app-login',
@@ -15,27 +16,37 @@ export class LoginComponent implements OnInit {
 
   @Language() lang: string;
 
+  returnUrl: string;
+
   constructor(private authenticationService: AuthenticationService,
               private alertService: AlertService,
+              private loadingBarService: LoadingBarService,
+              private route: ActivatedRoute,
               private router: Router) {
   }
 
   ngOnInit() {
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
   login(loginForm: NgForm) {
-    console.log('Login submitted');
-
     const username = loginForm.value.username;
     const password = loginForm.value.password;
+
+    this.loadingBarService.start();
 
     this.authenticationService.login(username, password)
       .subscribe(
         (user: UserCredentials) => {
-          this.alertService.success('You are successfully logged in')
-          this.router.navigate(['/dashboard']);
+          console.log('You are successfully logged in as: ' + JSON.stringify(user));
+          this.loadingBarService.stop();
+
+          this.alertService.success('You are successfully logged in');
+          this.router.navigate([this.returnUrl]);
         },
         error => {
+          this.loadingBarService.stop();
+
           console.log(error);
           this.alertService.error(error);
         }

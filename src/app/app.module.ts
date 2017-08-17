@@ -12,13 +12,19 @@ import { AlertService } from './core/alert.service';
 import { LocaleService, LocalizationModule, TranslationService } from 'angular-l10n';
 import { LoginComponent } from './authentication/login/login.component';
 import { AuthenticationService } from './authentication/shared/authentication.service';
+import { LoadingBarComponent } from './core/loading-bar/loading-bar.component';
+import { LoadingBarService } from './core/shared/loading-bar.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AuthenticationGuard } from './authentication/shared/authentication.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
     DialogComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    LoadingBarComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +37,9 @@ import { AuthenticationService } from './authentication/shared/authentication.se
   ],
   providers: [
     AlertService,
-    AuthenticationService
+    AuthenticationService,
+    AuthenticationGuard,
+    LoadingBarService
   ],
   entryComponents: [
     DialogComponent
