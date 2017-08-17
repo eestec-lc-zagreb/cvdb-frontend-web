@@ -16,6 +16,7 @@ import { LoadingBarComponent } from './core/loading-bar/loading-bar.component';
 import { LoadingBarService } from './core/shared/loading-bar.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthenticationGuard } from './authentication/shared/authentication.guard';
+import { HttpClient } from './core/shared/http-client.service';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { AuthenticationGuard } from './authentication/shared/authentication.guar
     LocalizationModule.forRoot()
   ],
   providers: [
+    HttpClient,
     AlertService,
     AuthenticationService,
     AuthenticationGuard,
