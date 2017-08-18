@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { AlertService } from '../alert.service';
 import { MdButtonToggleChange } from '@angular/material';
 import { Language, LocaleService } from 'angular-l10n';
+import { SidebarService } from '../shared/sidebar.service';
 
 @Component({
   selector: 'app-navbar',
@@ -17,7 +18,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   @Language() lang: string;
 
-  constructor(private alertService: AlertService, private locale: LocaleService) {
+  constructor(private sidebarService: SidebarService, private locale: LocaleService) {
   }
 
   ngOnInit() {
@@ -27,6 +28,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
     if (this.userLoggedInSubscription) {
       this.userLoggedInSubscription.unsubscribe();
     }
+  }
+
+  onToggle() {
+    this.sidebarService.toggleMenu();
   }
 
   onLogout() {

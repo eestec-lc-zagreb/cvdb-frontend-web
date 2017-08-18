@@ -17,6 +17,8 @@ import { LoadingBarService } from './core/shared/loading-bar.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthenticationGuard } from './authentication/shared/authentication.guard';
 import { HttpClient } from './core/shared/http-client.service';
+import { OverviewComponent } from './dashboard/overview/overview.component';
+import { SidebarService } from './core/shared/sidebar.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { HttpClient } from './core/shared/http-client.service';
     NavbarComponent,
     LoginComponent,
     LoadingBarComponent,
-    DashboardComponent
+    DashboardComponent,
+    OverviewComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import { HttpClient } from './core/shared/http-client.service';
     AlertService,
     AuthenticationService,
     AuthenticationGuard,
-    LoadingBarService
+    LoadingBarService,
+    SidebarService
   ],
   entryComponents: [
     DialogComponent
