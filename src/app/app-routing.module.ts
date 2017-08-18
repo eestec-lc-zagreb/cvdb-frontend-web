@@ -7,7 +7,7 @@ import { AuthenticationGuard } from './authentication/shared/authentication.guar
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'dashboard', component: DashboardComponent, canActivate: [AuthenticationGuard]},
-  {path: '**', redirectTo: '/login'}
+  {path: '**', redirectTo: '/dashboard'}
 ];
 
 @NgModule({
