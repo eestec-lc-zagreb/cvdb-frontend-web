@@ -19,6 +19,7 @@ import { AuthenticationGuard } from './authentication/shared/authentication.guar
 import { HttpClient } from './core/shared/http-client.service';
 import { OverviewComponent } from './dashboard/overview/overview.component';
 import { SidebarService } from './core/shared/sidebar.service';
+import { SidebarComponent } from './core/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SidebarService } from './core/shared/sidebar.service';
     LoginComponent,
     LoadingBarComponent,
     DashboardComponent,
-    OverviewComponent
+    OverviewComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
