@@ -4,5 +4,9 @@
   "LoginWelcome": "Welcome to CV database",
   "UsernamePlaceholder": "Username",
   "PasswordPlaceholder": "Password",
-  "LoginButtonText": "Login"
+  "LoginButtonText": "Login",
+  "DashboardNavText": "Dashboard",
+  "AccountNavText": "Account",
+  "LogoutNavText": "Log out",
+  "SubscriptionHeadingText": "Subscriptions"
 }

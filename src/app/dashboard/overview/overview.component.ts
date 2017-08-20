@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Language } from 'angular-l10n';
 
 @Component({
   selector: 'app-overview',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./overview.component.scss']
 })
 export class OverviewComponent implements OnInit {
+
+  @Language() lang: string;
 
   constructor() { }
 

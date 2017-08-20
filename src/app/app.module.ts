@@ -20,6 +20,7 @@ import { HttpClient } from './core/shared/http-client.service';
 import { OverviewComponent } from './dashboard/overview/overview.component';
 import { SidebarService } from './core/shared/sidebar.service';
 import { SidebarComponent } from './core/sidebar/sidebar.component';
+import { AccountComponent } from './dashboard/account/account.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { SidebarComponent } from './core/sidebar/sidebar.component';
     LoadingBarComponent,
     DashboardComponent,
     OverviewComponent,
-    SidebarComponent
+    SidebarComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,

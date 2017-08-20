@@ -4,5 +4,9 @@
   "LoginWelcome": "Dobrodošli u bazu životopisa",
   "UsernamePlaceholder": "Korisničko ime",
   "PasswordPlaceholder": "Lozinka",
-  "LoginButtonText": "Prijava"
+  "LoginButtonText": "Prijava",
+  "DashboardNavText": "Kontrolna ploča",
+  "AccountNavText": "Račun",
+  "LogoutNavText": "Odjava",
+  "SubscriptionHeadingText": "Pretplate"
 }

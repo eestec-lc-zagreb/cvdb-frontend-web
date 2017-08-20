@@ -1,6 +1,8 @@
 import {
-  MdButtonModule, MdButtonToggleModule, MdCardModule,
-  MdCheckboxModule,
+  MdButtonModule,
+  MdButtonToggleModule,
+  MdCardModule,
+  MdCheckboxModule, MdChipsModule,
   MdDialogModule,
   MdIconModule,
   MdInputModule,
@@ -14,7 +16,7 @@ import {
   MdToolbarModule,
   MdTooltipModule
 } from '@angular/material';
-import {NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 
 @NgModule({
   imports: [
@@ -34,7 +36,8 @@ import {NgModule} from '@angular/core';
     MdTooltipModule,
     MdDialogModule,
     MdButtonToggleModule,
-    MdCardModule
+    MdCardModule,
+    MdChipsModule
   ],
   exports: [
     MdButtonModule,
@@ -53,7 +56,8 @@ import {NgModule} from '@angular/core';
     MdTooltipModule,
     MdDialogModule,
     MdButtonToggleModule,
-    MdCardModule
+    MdCardModule,
+    MdChipsModule
   ]
 })
 export class MaterialDesignModule {
