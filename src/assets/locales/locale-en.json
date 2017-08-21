@@ -8,5 +8,6 @@
   "DashboardNavText": "Dashboard",
   "AccountNavText": "Account",
   "LogoutNavText": "Log out",
-  "SubscriptionHeadingText": "Subscriptions"
+  "SubscriptionHeadingText": "Subscriptions",
+  "SeeParticipantsText": "See participants"
 }
