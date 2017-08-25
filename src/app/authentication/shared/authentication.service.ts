@@ -9,6 +9,10 @@ import { AlertService } from '../../core/alert.service';
 @Injectable()
 export class AuthenticationService {
 
+  static getCurrentUser() {
+    return <UserCredentials>JSON.parse(sessionStorage.getItem('currentUser'));
+  }
+
   constructor(private http: Http, private router: Router, private alertService: AlertService) {
   }
 
@@ -30,7 +34,7 @@ export class AuthenticationService {
       .subscribe(
         response => {
           if (response.status === 200) {
-            localStorage.removeItem('loggedUser');
+            sessionStorage.removeItem('currentUser');
 
             this.alertService.success('You successfully logged out');
             this.router.navigate(['/login']);

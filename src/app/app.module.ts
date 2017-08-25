@@ -21,6 +21,7 @@ import { OverviewComponent } from './dashboard/overview/overview.component';
 import { SidebarService } from './core/shared/sidebar.service';
 import { SidebarComponent } from './core/sidebar/sidebar.component';
 import { AccountComponent } from './dashboard/account/account.component';
+import { SubscriptionsService } from './dashboard/shared/subscriptions.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { AccountComponent } from './dashboard/account/account.component';
     AuthenticationService,
     AuthenticationGuard,
     LoadingBarService,
-    SidebarService
+    SidebarService,
+    SubscriptionsService
   ],
   entryComponents: [
     DialogComponent
