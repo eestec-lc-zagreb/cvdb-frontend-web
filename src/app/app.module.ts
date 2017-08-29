@@ -22,6 +22,8 @@ import { SidebarService } from './core/shared/sidebar.service';
 import { SidebarComponent } from './core/sidebar/sidebar.component';
 import { AccountComponent } from './dashboard/account/account.component';
 import { SubscriptionsService } from './dashboard/shared/subscriptions.service';
+import { ParticipantsComponent } from './events/participants/participants.component';
+import { EventService } from './events/shared/event.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { SubscriptionsService } from './dashboard/shared/subscriptions.service';
     DashboardComponent,
     OverviewComponent,
     SidebarComponent,
-    AccountComponent
+    AccountComponent,
+    ParticipantsComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,8 @@ import { SubscriptionsService } from './dashboard/shared/subscriptions.service';
     AuthenticationGuard,
     LoadingBarService,
     SidebarService,
-    SubscriptionsService
+    SubscriptionsService,
+    EventService
   ],
   entryComponents: [
     DialogComponent

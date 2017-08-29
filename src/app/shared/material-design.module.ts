@@ -11,12 +11,13 @@ import {
   MdProgressBarModule,
   MdSelectModule,
   MdSidenavModule,
-  MdSnackBarModule,
+  MdSnackBarModule, MdTableModule,
   MdTabsModule,
   MdToolbarModule,
   MdTooltipModule
 } from '@angular/material';
 import { NgModule } from '@angular/core';
+import { CdkTableModule } from '@angular/cdk';
 
 @NgModule({
   imports: [
@@ -37,7 +38,9 @@ import { NgModule } from '@angular/core';
     MdDialogModule,
     MdButtonToggleModule,
     MdCardModule,
-    MdChipsModule
+    MdChipsModule,
+    MdTableModule,
+    CdkTableModule
   ],
   exports: [
     MdButtonModule,
@@ -57,7 +60,9 @@ import { NgModule } from '@angular/core';
     MdDialogModule,
     MdButtonToggleModule,
     MdCardModule,
-    MdChipsModule
+    MdChipsModule,
+    MdTableModule,
+    CdkTableModule
   ]
 })
 export class MaterialDesignModule {

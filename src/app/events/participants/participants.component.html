@@ -1,0 +1,34 @@
+<h2>{{ eventId }}</h2>
+
+<div class="mat-elevation-z8">
+  <md-table #table [dataSource]="participantsDataSource">
+
+    <ng-container cdkColumnDef="firstName">
+      <md-header-cell *cdkHeaderCellDef> {{ 'FirstNameText' | translate:lang }} </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.firstName}} </md-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="lastName">
+      <md-header-cell *cdkHeaderCellDef> {{ 'LastNameText' | translate:lang }} </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.lastName}} </md-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="studyProgramme">
+      <md-header-cell *cdkHeaderCellDef> {{ 'StudyProgrammeText' | translate:lang }} </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.studyProgramme}} </md-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="year">
+      <md-header-cell *cdkHeaderCellDef> {{ 'YearText' | translate:lang }} </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.year}} </md-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="cv">
+      <md-header-cell *cdkHeaderCellDef> {{ 'CVText' | translate:lang }} </md-header-cell>
+      <md-cell *cdkCellDef="let row"><a [href]="row.cv" target="_blank">CV</a></md-cell>
+    </ng-container>
+
+    <md-header-row *cdkHeaderRowDef="['firstName', 'lastName', 'studyProgramme', 'year', 'cv']"></md-header-row>
+    <md-row *cdkRowDef="let row; columns: ['firstName', 'lastName', 'studyProgramme', 'year', 'cv']"></md-row>
+  </md-table>
+</div>

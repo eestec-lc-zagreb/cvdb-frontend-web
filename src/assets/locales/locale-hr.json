@@ -7,7 +7,13 @@
   "LoginButtonText": "Prijava",
   "DashboardNavText": "Kontrolna ploča",
   "AccountNavText": "Račun",
+  "EventsNavText": "Događaji",
   "LogoutNavText": "Odjava",
   "SubscriptionHeadingText": "Pretplate",
-  "SeeParticipantsText": "Pregledaj sudionike"
+  "SeeParticipantsText": "Pregledaj sudionike",
+  "FirstNameText": "Ime",
+  "LastNameText": "Prezime",
+  "YearText": "Godina studija",
+  "StudyProgrammeText": "Studij",
+  "CVText": "Životopis"
 }
