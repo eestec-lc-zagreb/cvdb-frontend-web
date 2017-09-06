@@ -19,5 +19,6 @@
   "EventListHeadingText": "Events",
   "EventNameText": "Name",
   "EventShortNameText": "Short name",
-  "EventYearText": "Year"
+  "EventYearText": "Year",
+  "UserAccountHeadingText": "User account"
 }
