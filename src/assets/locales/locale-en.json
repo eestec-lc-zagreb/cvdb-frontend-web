@@ -15,5 +15,9 @@
   "LastNameText": "Last name",
   "YearText": "Year",
   "StudyProgrammeText": "Study programme",
-  "CVText": "CV"
+  "CVText": "CV",
+  "EventListHeadingText": "Events",
+  "EventNameText": "Name",
+  "EventShortNameText": "Short name",
+  "EventYearText": "Year"
 }

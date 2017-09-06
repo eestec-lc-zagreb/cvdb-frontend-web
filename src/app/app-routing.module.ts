@@ -6,11 +6,13 @@ import { AuthenticationGuard } from './authentication/shared/authentication.guar
 import { OverviewComponent } from './dashboard/overview/overview.component';
 import { AccountComponent } from './dashboard/account/account.component';
 import { ParticipantsComponent } from './events/participants/participants.component';
+import { EventListComponent } from './events/event-list/event-list.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'dashboard', component: DashboardComponent, canActivate: [AuthenticationGuard], children: [
     {path: 'overview', component: OverviewComponent},
+    {path: 'events', component: EventListComponent},
     {path: 'events/:id/participants', component: ParticipantsComponent},
     {path: 'account', component: AccountComponent}
   ]},

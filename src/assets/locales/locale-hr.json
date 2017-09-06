@@ -15,5 +15,9 @@
   "LastNameText": "Prezime",
   "YearText": "Godina studija",
   "StudyProgrammeText": "Studij",
-  "CVText": "Životopis"
+  "CVText": "Životopis",
+  "EventListHeadingText": "Događaji",
+  "EventNameText": "Naziv",
+  "EventShortNameText": "Kratki naziv",
+  "EventYearText": "Godina"
 }

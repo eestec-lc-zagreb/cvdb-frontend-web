@@ -24,6 +24,7 @@ import { AccountComponent } from './dashboard/account/account.component';
 import { SubscriptionsService } from './dashboard/shared/subscriptions.service';
 import { ParticipantsComponent } from './events/participants/participants.component';
 import { EventService } from './events/shared/event.service';
+import { EventListComponent } from './events/event-list/event-list.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { EventService } from './events/shared/event.service';
     OverviewComponent,
     SidebarComponent,
     AccountComponent,
-    ParticipantsComponent
+    ParticipantsComponent,
+    EventListComponent
   ],
   imports: [
     BrowserModule,

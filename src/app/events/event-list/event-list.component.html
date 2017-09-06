@@ -1,0 +1,34 @@
+<h2>{{ 'EventListHeadingText' | translate:lang }}</h2>
+
+<div class="mat-elevation-z8">
+  <md-table #table [dataSource]="eventsDataSource">
+
+    <ng-container cdkColumnDef="name">
+      <md-header-cell *cdkHeaderCellDef> {{ 'EventNameText' | translate:lang }} </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.name}} </md-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="shortName">
+      <md-header-cell *cdkHeaderCellDef> {{ 'EventShortNameText' | translate:lang }} </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.shortName}} </md-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="year">
+      <md-header-cell *cdkHeaderCellDef> {{ 'EventYearText' | translate:lang }} </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.year}} </md-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="participants">
+      <md-header-cell *cdkHeaderCellDef></md-header-cell>
+      <md-cell *cdkCellDef="let row">
+        <a
+          [routerLink]="['/dashboard/events', row.id, 'participants']">
+          {{ 'SeeParticipantsText' | translate:lang }}
+        </a>
+      </md-cell>
+    </ng-container>
+
+    <md-header-row *cdkHeaderRowDef="['name', 'shortName', 'year', 'participants']"></md-header-row>
+    <md-row *cdkRowDef="let row; columns: ['name', 'shortName', 'year', 'participants']"></md-row>
+  </md-table>
+</div>
