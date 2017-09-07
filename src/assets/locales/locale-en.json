@@ -25,5 +25,9 @@
   "EventShortNameText": "Short name",
   "EventYearText": "Year",
   "UserAccountHeadingText": "User account",
-  "SaveChangesText": "Save changes"
+  "SaveChangesText": "Save changes",
+  "ChangePasswordText": "Change password",
+  "OldPasswordText": "Old password",
+  "NewPasswordText": "New password",
+  "ConfirmPasswordText": "Confirm password"
 }

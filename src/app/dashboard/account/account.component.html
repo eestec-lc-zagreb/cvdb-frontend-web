@@ -12,7 +12,6 @@
         <md-input-container style="width: 100%">
           <input
             name="name"
-            [placeholder]="'NamePlaceholder' | translate:lang"
             mdInput
             required
             [(ngModel)]="user.name"
@@ -46,6 +45,13 @@
   color="primary"
   (click)="onSubmitChanges()">
   {{ 'SaveChangesText' | translate:lang }}
+</button>
+
+<button
+  md-button
+  color="primary"
+  (click)="onOpenChangePasswordDialog()">
+  {{ 'ChangePasswordText' | translate:lang }}
 </button>
 
 

@@ -5,6 +5,8 @@ import { AlertService } from '../../core/alert.service';
 import { UserData } from '../shared/user-data.model';
 import { AuthenticationService } from '../../authentication/shared/authentication.service';
 import { LoadingBarService } from '../../core/shared/loading-bar.service';
+import { PasswordDialogComponent } from './password-dialog/password-dialog.component';
+import { MdDialog, MdDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-account',
@@ -20,7 +22,9 @@ export class AccountComponent implements OnInit {
 
   constructor(private userService: UserService,
               private alertService: AlertService,
-              private loadingBarService: LoadingBarService) { }
+              private loadingBarService: LoadingBarService,
+              public dialog: MdDialog) {
+  }
 
   ngOnInit() {
     this.id = AuthenticationService.getCurrentUser().id;
@@ -63,4 +67,17 @@ export class AccountComponent implements OnInit {
       );
   }
 
+  onOpenChangePasswordDialog() {
+    this.openPasswordDialog();
+  }
+
+  private openPasswordDialog(): MdDialogRef<PasswordDialogComponent> {
+    return this.dialog.open(PasswordDialogComponent, {
+      data: {
+        id: this.id,
+        title: 'ChangePasswordText'
+      },
+      disableClose: true
+    });
+  }
 }

@@ -25,5 +25,9 @@
   "EventShortNameText": "Kratki naziv",
   "EventYearText": "Godina",
   "UserAccountHeadingText": "Korisnički račun",
-  "SaveChangesText": "Spremi promjene"
+  "SaveChangesText": "Spremi promjene",
+  "ChangePasswordText": "Promijeni lozinku",
+  "OldPasswordText": "Stara lozinka",
+  "NewPasswordText": "Nova lozinka",
+  "ConfirmPasswordText": "Potvrdi lozinku"
 }

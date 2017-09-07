@@ -27,7 +27,7 @@ export class UserService {
       confirmation: confirmation
     };
 
-    return this.http.post('/api/v1/users/' + id, requestBody);
+    return this.http.post('/api/v1/users/' + id + '/change-password', requestBody);
   }
 
   updateUserData(id: number, name: string): Observable<Response> {
