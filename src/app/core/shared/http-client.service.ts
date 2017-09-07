@@ -1,4 +1,4 @@
-import { Http, Headers, RequestOptions, Response } from '@angular/http';
+import { Headers, Http, RequestOptions, Response } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
@@ -11,7 +11,8 @@ export class HttpClient {
     return new RequestOptions({headers: headers, withCredentials: true});
   }
 
-  constructor(private http: Http) {}
+  constructor(private http: Http) {
+  }
 
   get(url: string): Observable<Response> {
     return this.http.get(url, HttpClient.defaultRequestOptions());
@@ -19,6 +20,10 @@ export class HttpClient {
 
   post(url: string, body: any): Observable<Response> {
     return this.http.post(url, body, HttpClient.defaultRequestOptions());
+  }
+
+  put(url: string, body: any): Observable<Response> {
+    return this.http.put(url, body, HttpClient.defaultRequestOptions());
   }
 
 }

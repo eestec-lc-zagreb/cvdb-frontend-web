@@ -2,8 +2,12 @@
   "CroatianLanguage": "Hrvatski",
   "EnglishLanguage": "Engleski",
   "LoginWelcome": "Dobrodošli u bazu životopisa",
+  "NamePlaceholder": "Naziv",
   "UsernamePlaceholder": "Korisničko ime",
   "PasswordPlaceholder": "Lozinka",
+  "ActiveText": "Aktivan",
+  "CreatedAtText": "Datum kreiranja",
+  "ModifiedAtText": "Datum ažuriranja",
   "LoginButtonText": "Prijava",
   "DashboardNavText": "Kontrolna ploča",
   "AccountNavText": "Račun",
@@ -20,5 +24,6 @@
   "EventNameText": "Naziv",
   "EventShortNameText": "Kratki naziv",
   "EventYearText": "Godina",
-  "UserAccountHeadingText": "Korisnički račun"
+  "UserAccountHeadingText": "Korisnički račun",
+  "SaveChangesText": "Spremi promjene"
 }

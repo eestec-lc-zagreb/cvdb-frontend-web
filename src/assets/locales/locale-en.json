@@ -2,8 +2,12 @@
   "CroatianLanguage": "Croatian",
   "EnglishLanguage": "English",
   "LoginWelcome": "Welcome to CV database",
+  "NamePlaceholder": "Name",
   "UsernamePlaceholder": "Username",
   "PasswordPlaceholder": "Password",
+  "ActiveText": "Active",
+  "CreatedAtText": "Created at",
+  "ModifiedAtText": "Modified at",
   "LoginButtonText": "Login",
   "DashboardNavText": "Dashboard",
   "AccountNavText": "Account",
@@ -20,5 +24,6 @@
   "EventNameText": "Name",
   "EventShortNameText": "Short name",
   "EventYearText": "Year",
-  "UserAccountHeadingText": "User account"
+  "UserAccountHeadingText": "User account",
+  "SaveChangesText": "Save changes"
 }

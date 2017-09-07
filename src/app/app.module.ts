@@ -25,6 +25,7 @@ import { SubscriptionsService } from './dashboard/shared/subscriptions.service';
 import { ParticipantsComponent } from './events/participants/participants.component';
 import { EventService } from './events/shared/event.service';
 import { EventListComponent } from './events/event-list/event-list.component';
+import { UserService } from './dashboard/shared/user.service';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { EventListComponent } from './events/event-list/event-list.component';
     LoadingBarService,
     SidebarService,
     SubscriptionsService,
-    EventService
+    EventService,
+    UserService
   ],
   entryComponents: [
     DialogComponent

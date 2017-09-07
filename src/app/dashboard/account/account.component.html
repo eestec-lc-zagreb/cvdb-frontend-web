@@ -1,3 +1,51 @@
-<h2> {{ 'UserAccountHeadingText' | translate:lang }} </h2>
+<h2> {{ 'UserAccountHeadingText' | translate:lang }}: {{ user.name }} </h2>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <td>{{ user.id }}</td>
+  </tr>
+  <tr>
+    <th>{{ 'NamePlaceholder' | translate:lang }}</th>
+    <td>
+      <form>
+        <md-input-container style="width: 100%">
+          <input
+            name="name"
+            [placeholder]="'NamePlaceholder' | translate:lang"
+            mdInput
+            required
+            [(ngModel)]="user.name"
+            [value]="user.name">
+        </md-input-container>
+      </form>
+    </td>
+  </tr>
+  <tr>
+    <th>{{ 'UsernamePlaceholder' | translate:lang }}</th>
+    <td>{{ user.username }}</td>
+  </tr>
+  <tr>
+    <th>{{ 'ActiveText' | translate:lang }}</th>
+    <td>{{ user.active }}</td>
+  </tr>
+  <tr>
+    <th>{{ 'CreatedAtText' | translate:lang }}</th>
+    <td>{{ user.createdAt | date:'dd.MM.yyyy.' }}</td>
+  </tr>
+  <tr>
+    <th>{{ 'ModifiedAtText' | translate:lang }}</th>
+    <td>{{ user.modifiedAt | date:'dd.MM.yyyy.' }}</td>
+  </tr>
+</table>
+
+<br />
+
+<button
+  md-raised-button
+  color="primary"
+  (click)="onSubmitChanges()">
+  {{ 'SaveChangesText' | translate:lang }}
+</button>
 
 
