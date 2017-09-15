@@ -1,1 +1,14 @@
 <h2>{{ 'DashboardNavText' | translate:lang }}</h2>
+
+<nav md-tab-nav-bar>
+  <a md-tab-link
+     *ngFor="let link of navLinks"
+     [id]="link.id"
+     [routerLink]="link.navLink"
+     routerLinkActive #rla="routerLinkActive"
+     [active]="rla.isActive">
+    {{link.label}}
+  </a>
+</nav>
+
+<router-outlet></router-outlet>

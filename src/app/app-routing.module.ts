@@ -8,6 +8,9 @@ import { AccountComponent } from './dashboard/account/account.component';
 import { ParticipantsComponent } from './events/participants/participants.component';
 import { EventListComponent } from './events/event-list/event-list.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { UsersComponent } from './admin-panel/users/users.component';
+import { StudentsComponent } from './admin-panel/students/students.component';
+import { EventsComponent } from './admin-panel/events/events.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -16,7 +19,11 @@ const routes: Routes = [
     {path: 'events', component: EventListComponent},
     {path: 'events/:id/participants', component: ParticipantsComponent},
     {path: 'account', component: AccountComponent},
-    {path: 'admin', component: AdminPanelComponent}
+    {path: 'admin', component: AdminPanelComponent, children: [
+      {path: 'users', component: UsersComponent},
+      {path: 'students', component: StudentsComponent},
+      {path: 'events', component: EventsComponent},
+    ]}
   ]},
   {path: '**', redirectTo: '/dashboard'}
 ];
