@@ -7,6 +7,7 @@ import { OverviewComponent } from './dashboard/overview/overview.component';
 import { AccountComponent } from './dashboard/account/account.component';
 import { ParticipantsComponent } from './events/participants/participants.component';
 import { EventListComponent } from './events/event-list/event-list.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
     {path: 'overview', component: OverviewComponent},
     {path: 'events', component: EventListComponent},
     {path: 'events/:id/participants', component: ParticipantsComponent},
-    {path: 'account', component: AccountComponent}
+    {path: 'account', component: AccountComponent},
+    {path: 'admin', component: AdminPanelComponent}
   ]},
   {path: '**', redirectTo: '/dashboard'}
 ];

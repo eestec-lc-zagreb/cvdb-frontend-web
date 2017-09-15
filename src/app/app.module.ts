@@ -27,6 +27,7 @@ import { EventService } from './events/shared/event.service';
 import { EventListComponent } from './events/event-list/event-list.component';
 import { UserService } from './dashboard/shared/user.service';
 import { PasswordDialogComponent } from './dashboard/account/password-dialog/password-dialog.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { PasswordDialogComponent } from './dashboard/account/password-dialog/pas
     AccountComponent,
     ParticipantsComponent,
     EventListComponent,
-    PasswordDialogComponent
+    PasswordDialogComponent,
+    AdminPanelComponent
   ],
   imports: [
     BrowserModule,
