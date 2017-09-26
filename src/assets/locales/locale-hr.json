@@ -30,5 +30,8 @@
   "ChangePasswordText": "Promijeni lozinku",
   "OldPasswordText": "Stara lozinka",
   "NewPasswordText": "Nova lozinka",
-  "ConfirmPasswordText": "Potvrdi lozinku"
+  "ConfirmPasswordText": "Potvrdi lozinku",
+  "UsersTabText": "Korisnici",
+  "StudentsTabText": "Studenti",
+  "EventsTabText": "Događaji"
 }

@@ -30,5 +30,8 @@
   "ChangePasswordText": "Change password",
   "OldPasswordText": "Old password",
   "NewPasswordText": "New password",
-  "ConfirmPasswordText": "Confirm password"
+  "ConfirmPasswordText": "Confirm password",
+  "UsersTabText": "Users",
+  "StudentsTabText": "Students",
+  "EventsTabText": "Events"
 }

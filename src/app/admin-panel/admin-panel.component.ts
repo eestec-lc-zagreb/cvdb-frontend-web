@@ -18,17 +18,17 @@ export class AdminPanelComponent implements OnInit {
     this.navLinks = [
       {
         id: 'users',
-        label: 'Users',
+        label: 'UsersTabText',
         navLink: '/dashboard/admin/users'
       },
       {
         id: 'students',
-        label: 'Students',
+        label: 'StudentsTabText',
         navLink: '/dashboard/admin/students'
       },
       {
         id: 'events',
-        label: 'Events',
+        label: 'EventsTabText',
         navLink: '/dashboard/admin/events'
       }
     ];

@@ -7,7 +7,7 @@ import {
   MdIconModule,
   MdInputModule,
   MdListModule,
-  MdMenuModule,
+  MdMenuModule, MdPaginatorModule,
   MdProgressBarModule,
   MdSelectModule,
   MdSidenavModule,
@@ -40,7 +40,8 @@ import { CdkTableModule } from '@angular/cdk';
     MdCardModule,
     MdChipsModule,
     MdTableModule,
-    CdkTableModule
+    CdkTableModule,
+    MdPaginatorModule
   ],
   exports: [
     MdButtonModule,
@@ -62,7 +63,8 @@ import { CdkTableModule } from '@angular/cdk';
     MdCardModule,
     MdChipsModule,
     MdTableModule,
-    CdkTableModule
+    CdkTableModule,
+    MdPaginatorModule
   ]
 })
 export class MaterialDesignModule {

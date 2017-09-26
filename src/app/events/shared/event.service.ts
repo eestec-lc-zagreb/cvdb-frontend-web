@@ -6,6 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { Subject } from 'rxjs/Subject';
 import { EventData } from './event-data.model';
+import { Page } from '../../shared/page.model';
 
 @Injectable()
 export class EventService {
@@ -17,11 +18,22 @@ export class EventService {
   constructor(private http: HttpClient) {
   }
 
-  getAllEvents(): Observable<EventData[]> {
+  getAllEvents(): Observable<Page<EventData>> {
     return this.http.get('/api/v1/events')
       .map(
         (response: Response) => {
-          return <EventData[]>response.json().content;
+          return <Page<EventData>>response.json();
+        }
+      );
+  }
+
+  getEvents(pageIndex: number, pageSize: number): Observable<Page<EventData>> {
+    const pagination = '?page=' + pageIndex + '&size=' + pageSize;
+
+    return this.http.get('/api/v1/events' + pagination)
+      .map(
+        (response: Response) => {
+          return <Page<EventData>>response.json();
         }
       );
   }

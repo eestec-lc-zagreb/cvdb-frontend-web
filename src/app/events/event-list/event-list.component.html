@@ -31,4 +31,10 @@
     <md-header-row *cdkHeaderRowDef="['name', 'shortName', 'year', 'participants']"></md-header-row>
     <md-row *cdkRowDef="let row; columns: ['name', 'shortName', 'year', 'participants']"></md-row>
   </md-table>
+
+  <md-paginator [length]="pagination.length"
+                [pageSize]="pagination.pageSize"
+                [pageSizeOptions]="pagination.defaultPageSizeOptions()"
+                (page)="onPageOptionsChange($event)">
+  </md-paginator>
 </div>
