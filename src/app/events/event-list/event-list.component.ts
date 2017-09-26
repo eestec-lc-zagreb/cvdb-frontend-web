@@ -9,6 +9,9 @@ import { Language } from 'angular-l10n';
 import { PageEvent } from '@angular/material';
 import { Pagination } from '../../shared/pagination.model';
 import { Page } from '../../shared/page.model';
+import { UserCredentials } from '../../authentication/shared/user-credentials.model';
+import { AuthenticationService } from '../../authentication/shared/authentication.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-event-list',
@@ -23,9 +26,12 @@ export class EventListComponent implements OnInit {
 
   eventsDataSource: EventsDataSource;
 
+  admin: boolean;
+
   @Language() private lang: string;
 
-  constructor(private eventService: EventService,
+  constructor(private route: ActivatedRoute,
+              private eventService: EventService,
               private alertService: AlertService,
               private loadingBarService: LoadingBarService) {
   }
@@ -34,6 +40,11 @@ export class EventListComponent implements OnInit {
     this.events = [];
     this.pagination = new Pagination();
     this.eventsDataSource = new EventsDataSource(this.eventService);
+
+    const currentUser: UserCredentials = AuthenticationService.getCurrentUser();
+    const currentUrl: string = this.route.snapshot.parent.url.join();
+
+    this.admin = this.isAdmin(currentUser, currentUrl);
 
     // FIXME this.fetchEvents(0, this.pagination.pageSize);
     this.getEvents();
@@ -86,6 +97,10 @@ export class EventListComponent implements OnInit {
   onPageOptionsChange(page: PageEvent) {
     // FIXME this.fetchEvents(page.pageIndex, page.pageSize);
     console.log(page);
+  }
+
+  isAdmin(currentUser: UserCredentials, url: string) {
+    return currentUser.role === 'ADMINISTRATOR' && url === 'admin';
   }
 
 }
