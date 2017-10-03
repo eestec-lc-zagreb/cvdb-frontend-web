@@ -38,6 +38,15 @@ export class EventService {
       );
   }
 
+  getEvent(id: number): Observable<EventData> {
+    return this.http.get(`/api/v1/events/${id}`)
+      .map(
+        (response: Response) => {
+          return <EventData>response.json();
+        }
+      );
+  }
+
   getEventParticipants(eventId: number): Observable<ParticipantData[]> {
     return this.http.get('/api/v1/events/' + eventId + '/participants')
       .map(

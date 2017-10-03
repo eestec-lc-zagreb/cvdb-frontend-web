@@ -1,0 +1,54 @@
+<h2
+  *ngIf="data"
+  md-dialog-title>
+  {{ data.title | translate:lang }}
+</h2>
+
+<md-dialog-content>
+  <form #form="ngForm" (submit)="onSubmitEventData(form)">
+    <md-input-container style="width: 100%">
+      <input
+        name="name"
+        type="text"
+        [placeholder]="'EventNameText' | translate:lang"
+        mdInput
+        required
+        [(ngModel)]="event.name">
+    </md-input-container>
+
+    <md-input-container style="width: 100%">
+      <input
+        name="shortName"
+        type="text"
+        [placeholder]="'EventShortNameText' | translate:lang"
+        mdInput
+        required
+        [(ngModel)]="event.shortName">
+    </md-input-container>
+
+    <md-input-container style="width: 100%">
+      <input
+        name="year"
+        type="text"
+        [placeholder]="'EventYearText' | translate:lang"
+        mdInput
+        required
+        [(ngModel)]="event.year">
+    </md-input-container>
+
+    <button
+      md-raised-button
+      type="submit"
+      color="primary"
+      [disabled]="!form.valid">
+      Spremi
+    </button>
+
+    <button
+      md-button
+      [md-dialog-close]="false">
+      Odustani
+    </button>
+  </form>
+</md-dialog-content>
+

@@ -6,12 +6,13 @@ import { CollectionViewer, DataSource } from '@angular/cdk';
 import { Observable } from 'rxjs/Observable';
 import { LoadingBarService } from '../../core/shared/loading-bar.service';
 import { Language } from 'angular-l10n';
-import { PageEvent } from '@angular/material';
+import { MdDialog, MdDialogRef, PageEvent } from '@angular/material';
 import { Pagination } from '../../shared/pagination.model';
 import { Page } from '../../shared/page.model';
 import { UserCredentials } from '../../authentication/shared/user-credentials.model';
 import { AuthenticationService } from '../../authentication/shared/authentication.service';
 import { ActivatedRoute } from '@angular/router';
+import { EventDialogComponent } from '../../admin-panel/events/event-dialog/event-dialog.component';
 
 @Component({
   selector: 'app-event-list',
@@ -33,7 +34,8 @@ export class EventListComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private eventService: EventService,
               private alertService: AlertService,
-              private loadingBarService: LoadingBarService) {
+              private loadingBarService: LoadingBarService,
+              public dialog: MdDialog) {
   }
 
   ngOnInit() {
@@ -104,6 +106,21 @@ export class EventListComponent implements OnInit {
 
   isAdmin(currentUser: UserCredentials, url: string) {
     return currentUser.role === 'ADMINISTRATOR' && url === 'admin';
+  }
+
+  onOpenEventDialog(editMode: boolean, eventId?: number) {
+    this.openEventDialog(editMode, eventId);
+  }
+
+  private openEventDialog(editMode: boolean, eventId?: number): MdDialogRef<EventDialogComponent> {
+    return this.dialog.open(EventDialogComponent, {
+      data: {
+        title: editMode ? 'EditEventButtonText' : 'AddNewEventButtonText',
+        editMode: editMode,
+        eventId: eventId
+      },
+      disableClose: true
+    });
   }
 
 }
