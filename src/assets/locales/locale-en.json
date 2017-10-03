@@ -33,5 +33,7 @@
   "ConfirmPasswordText": "Confirm password",
   "UsersTabText": "Users",
   "StudentsTabText": "Students",
-  "EventsTabText": "Events"
+  "EventsTabText": "Events",
+  "EditEventButtonText": "Edit event",
+  "AddNewEventButtonText": "Add new event"
 }

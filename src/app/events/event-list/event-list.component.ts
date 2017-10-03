@@ -44,6 +44,9 @@ export class EventListComponent implements OnInit {
     const currentUser: UserCredentials = AuthenticationService.getCurrentUser();
     const currentUrl: string = this.route.snapshot.parent.url.join();
 
+    console.log(currentUser);
+    console.log(currentUrl);
+
     this.admin = this.isAdmin(currentUser, currentUrl);
 
     // FIXME this.fetchEvents(0, this.pagination.pageSize);

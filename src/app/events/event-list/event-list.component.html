@@ -1,5 +1,15 @@
 <h2>{{ 'EventListHeadingText' | translate:lang }}</h2>
 
+<button
+  *ngIf="admin"
+  md-raised-button
+  color="primary">
+  {{ 'AddNewEventButtonText' | translate:lang }}
+</button>
+
+<br />
+<br />
+
 <div class="mat-elevation-z8">
   <md-table #table [dataSource]="eventsDataSource">
 
@@ -18,18 +28,28 @@
       <md-cell *cdkCellDef="let row"> {{row.year}} </md-cell>
     </ng-container>
 
-    <ng-container cdkColumnDef="participants">
+    <ng-container cdkColumnDef="actions">
       <md-header-cell *cdkHeaderCellDef></md-header-cell>
       <md-cell *cdkCellDef="let row">
-        <a
+        <button
+          md-button
+          color="primary"
           [routerLink]="['/dashboard/events', row.id, 'participants']">
           {{ 'SeeParticipantsText' | translate:lang }}
-        </a>
+        </button>
+
+        <button
+          *ngIf="admin"
+          md-raised-button
+          color="accent">
+          {{ 'EditEventButtonText' | translate:lang }}
+        </button>
       </md-cell>
     </ng-container>
 
-    <md-header-row *cdkHeaderRowDef="['name', 'shortName', 'year', 'participants']"></md-header-row>
-    <md-row *cdkRowDef="let row; columns: ['name', 'shortName', 'year', 'participants']"></md-row>
+    <md-header-row *cdkHeaderRowDef="['name', 'shortName', 'year', 'actions']"></md-header-row>
+
+    <md-row *cdkRowDef="let row; columns: ['name', 'shortName', 'year', 'actions']"></md-row>
   </md-table>
 
   <md-paginator [length]="pagination.length"

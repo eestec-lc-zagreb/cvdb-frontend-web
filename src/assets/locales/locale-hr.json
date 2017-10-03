@@ -33,5 +33,7 @@
   "ConfirmPasswordText": "Potvrdi lozinku",
   "UsersTabText": "Korisnici",
   "StudentsTabText": "Studenti",
-  "EventsTabText": "Događaji"
+  "EventsTabText": "Događaji",
+  "EditEventButtonText": "Uredi događaj",
+  "AddNewEventButtonText": "Dodaj novi događaj"
 }
