@@ -18,7 +18,7 @@ export class AccountComponent implements OnInit {
   id: number;
   user: UserData;
 
-  @Language() private lang: string;
+  @Language() lang: string;
 
   constructor(private userService: UserService,
               private alertService: AlertService,

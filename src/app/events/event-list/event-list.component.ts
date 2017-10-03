@@ -28,7 +28,7 @@ export class EventListComponent implements OnInit {
 
   admin: boolean;
 
-  @Language() private lang: string;
+  @Language() lang: string;
 
   constructor(private route: ActivatedRoute,
               private eventService: EventService,

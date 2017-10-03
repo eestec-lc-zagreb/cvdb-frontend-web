@@ -6,7 +6,7 @@ import { EventService } from '../shared/event.service';
 import { ActivatedRoute } from '@angular/router';
 import { AlertService } from '../../core/alert.service';
 import { LoadingBarService } from '../../core/shared/loading-bar.service';
-import { Language } from "angular-l10n";
+import { Language } from 'angular-l10n';
 
 @Component({
   selector: 'app-participants',
