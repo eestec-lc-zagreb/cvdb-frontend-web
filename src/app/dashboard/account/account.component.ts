@@ -51,7 +51,7 @@ export class AccountComponent implements OnInit {
     this.userService.updateUserData(this.id, this.user.name)
       .subscribe(
         response => {
-          if (response.status === 204) {
+          if (response.status === 200) {
             this.alertService.success('User data updated');
 
             this.loadingBarService.stop();

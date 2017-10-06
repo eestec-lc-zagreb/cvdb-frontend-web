@@ -32,6 +32,8 @@ import { UsersComponent } from './admin-panel/users/users.component';
 import { StudentsComponent } from './admin-panel/students/students.component';
 import { EventsComponent } from './admin-panel/events/events.component';
 import { EventDialogComponent } from './admin-panel/events/event-dialog/event-dialog.component';
+import { UserListComponent } from './users/user-list/user-list.component';
+import { StudentListComponent } from './students/student-list/student-list.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { EventDialogComponent } from './admin-panel/events/event-dialog/event-di
     UsersComponent,
     StudentsComponent,
     EventsComponent,
-    EventDialogComponent
+    EventDialogComponent,
+    UserListComponent,
+    StudentListComponent
   ],
   imports: [
     BrowserModule,
