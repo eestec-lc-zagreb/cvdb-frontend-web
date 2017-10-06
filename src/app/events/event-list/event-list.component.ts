@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { EventService } from '../shared/event.service';
 import { EventData } from '../shared/event-data.model';
 import { AlertService } from '../../core/alert.service';
@@ -13,19 +13,21 @@ import { UserCredentials } from '../../authentication/shared/user-credentials.mo
 import { AuthenticationService } from '../../authentication/shared/authentication.service';
 import { ActivatedRoute } from '@angular/router';
 import { EventDialogComponent } from '../../admin-panel/events/event-dialog/event-dialog.component';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-event-list',
   templateUrl: './event-list.component.html',
   styleUrls: ['./event-list.component.scss']
 })
-export class EventListComponent implements OnInit {
+export class EventListComponent implements OnInit, OnDestroy {
 
   events: EventData[];
 
   pagination: Pagination;
 
   eventsDataSource: EventsDataSource;
+  eventChangeSubscription: Subscription;
 
   admin: boolean;
 
@@ -53,6 +55,14 @@ export class EventListComponent implements OnInit {
 
     // FIXME this.fetchEvents(0, this.pagination.pageSize);
     this.getEvents();
+
+    this.eventChangeSubscription = this.eventService.eventChange.subscribe(() => this.getEvents());
+  }
+
+  ngOnDestroy() {
+    if (this.eventChangeSubscription) {
+      this.eventChangeSubscription.unsubscribe();
+    }
   }
 
   fetchEvents(pageIndex: number, pageSize: number) {

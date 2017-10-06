@@ -2,9 +2,9 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MD_DIALOG_DATA, MdDialogRef } from '@angular/material';
 import { LoadingBarService } from '../../../core/shared/loading-bar.service';
 import { EventService } from '../../../events/shared/event.service';
-import { NgForm } from '@angular/forms';
 import { EventData } from '../../../events/shared/event-data.model';
 import { AlertService } from '../../../core/alert.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-event-dialog',
@@ -29,8 +29,42 @@ export class EventDialogComponent implements OnInit {
     }
   }
 
-  onSubmitEventData(form: NgForm) {
-    console.log(this.event);
+  onSubmitEventData() {
+    this.loadingBarService.start();
+
+    let eventDataObservable: Observable<EventData>;
+
+    if (this.data.editMode) {
+      eventDataObservable = this.eventService.updateEvent(this.event);
+    } else {
+      eventDataObservable = this.eventService.createEvent(this.event);
+    }
+
+    eventDataObservable.subscribe(
+      (eventData: EventData) => {
+        this.eventService.eventChange.next(eventData);
+
+        let eventMessage;
+        if (this.data.editMode) {
+          eventMessage = 'Event updated';
+        } else {
+          eventMessage = 'Event created';
+        }
+
+        this.alertService.success(eventMessage);
+        this.loadingBarService.stop();
+
+        this.dialogRef.close();
+      },
+      error => {
+        console.error(error);
+
+        this.alertService.error(error);
+        this.loadingBarService.stop();
+
+        this.dialogRef.close();
+      }
+    );
   }
 
   getEventData() {

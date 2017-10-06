@@ -15,7 +15,27 @@ export class EventService {
 
   eventsSubject: Subject<EventData[]> = new Subject<EventData[]>();
 
+  eventChange: Subject<EventData> = new Subject<EventData>();
+
   constructor(private http: HttpClient) {
+  }
+
+  createEvent(eventData: EventData): Observable<EventData> {
+    return this.http.post('/api/v1/events', eventData)
+      .map(
+        (response: Response) => {
+          return <EventData>response.json();
+        }
+      );
+  }
+
+  updateEvent(eventData: EventData): Observable<EventData> {
+    return this.http.put(`/api/v1/events/${eventData.id}`, eventData)
+      .map(
+        (response: Response) => {
+          return <EventData>response.json();
+        }
+      );
   }
 
   getAllEvents(): Observable<Page<EventData>> {
