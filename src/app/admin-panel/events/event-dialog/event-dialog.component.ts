@@ -34,19 +34,15 @@ export class EventDialogComponent implements OnInit {
   }
 
   getEventData() {
-    this.loadingBarService.start();
-
     this.eventService.getEvent(this.data.eventId)
       .subscribe(
         (event: EventData) => {
           this.event = event;
 
-          this.loadingBarService.stop();
         },
         error => {
           this.alertService.error(error);
 
-          this.loadingBarService.stop();
         }
       );
   }
