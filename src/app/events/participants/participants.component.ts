@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ParticipantData } from '../shared/participant-data.model';
-import { CollectionViewer, DataSource } from '@angular/cdk';
+import { DataSource } from '@angular/cdk/collections';
 import { Observable } from 'rxjs/Observable';
 import { EventService } from '../shared/event.service';
 import { ActivatedRoute } from '@angular/router';
@@ -61,11 +61,11 @@ export class ParticipantsDataSource extends DataSource<ParticipantData> {
     super();
   }
 
-  connect(collectionViewer: CollectionViewer): Observable<ParticipantData[]> {
+  connect(): Observable<ParticipantData[]> {
     return this.eventService.eventParticipantsSubject;
   }
 
-  disconnect(collectionViewer: CollectionViewer): void {
+  disconnect(): void {
   }
 
 }

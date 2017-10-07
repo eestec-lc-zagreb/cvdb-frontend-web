@@ -1,7 +1,7 @@
 <h2>{{ 'DashboardNavText' | translate:lang }}</h2>
 
-<nav md-tab-nav-bar>
-  <a md-tab-link
+<nav mat-tab-nav-bar>
+  <a mat-tab-link
      *ngFor="let link of navLinks"
      [id]="link.id"
      [routerLink]="link.navLink"

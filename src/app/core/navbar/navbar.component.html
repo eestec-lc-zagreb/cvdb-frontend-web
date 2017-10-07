@@ -1,34 +1,34 @@
-<md-toolbar color="primary">
+<mat-toolbar color="primary">
   <button
-    md-icon-button
+    mat-icon-button
     (click)="onToggle()">
-    <md-icon>menu</md-icon>
+    <mat-icon>menu</mat-icon>
   </button>
   <span>EESTEC LC Zagreb</span>
 
   <!-- This fills the remaining space of the current row -->
   <span class="fill-remaining-space"></span>
 
-  <md-menu
-    #localeMenu="mdMenu">
+  <mat-menu
+    #localeMenu="matMenu">
 
     <button
-      md-menu-item
+      mat-menu-item
       (click)="setLocale('en')">
       {{ 'EnglishLanguage' | translate:lang }}
     </button>
     <button
-      md-menu-item
+      mat-menu-item
       (click)="setLocale('hr')">
       {{ 'CroatianLanguage' | translate:lang }}
     </button>
-  </md-menu>
+  </mat-menu>
 
   <button
-    md-icon-button
-    [mdMenuTriggerFor]="localeMenu">
+    mat-icon-button
+    [matMenuTriggerFor]="localeMenu">
 
-    <md-icon>language</md-icon>
+    <mat-icon>language</mat-icon>
   </button>
 
-</md-toolbar>
+</mat-toolbar>

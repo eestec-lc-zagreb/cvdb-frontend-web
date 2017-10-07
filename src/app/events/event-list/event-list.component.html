@@ -2,7 +2,7 @@
 
 <button
   *ngIf="admin"
-  md-raised-button
+  mat-raised-button
   color="primary"
   (click)="onOpenEventDialog(false)">
   {{ 'AddNewEventButtonText' | translate:lang }}
@@ -12,28 +12,28 @@
 <br />
 
 <div class="mat-elevation-z8">
-  <md-table #table [dataSource]="eventsDataSource">
+  <mat-table #table [dataSource]="eventsDataSource">
 
     <ng-container cdkColumnDef="name">
-      <md-header-cell *cdkHeaderCellDef> {{ 'EventNameText' | translate:lang }} </md-header-cell>
-      <md-cell *cdkCellDef="let row"> {{row.name}} </md-cell>
+      <mat-header-cell *cdkHeaderCellDef> {{ 'EventNameText' | translate:lang }} </mat-header-cell>
+      <mat-cell *cdkCellDef="let row"> {{row.name}} </mat-cell>
     </ng-container>
 
     <ng-container cdkColumnDef="shortName">
-      <md-header-cell *cdkHeaderCellDef> {{ 'EventShortNameText' | translate:lang }} </md-header-cell>
-      <md-cell *cdkCellDef="let row"> {{row.shortName}} </md-cell>
+      <mat-header-cell *cdkHeaderCellDef> {{ 'EventShortNameText' | translate:lang }} </mat-header-cell>
+      <mat-cell *cdkCellDef="let row"> {{row.shortName}} </mat-cell>
     </ng-container>
 
     <ng-container cdkColumnDef="year">
-      <md-header-cell *cdkHeaderCellDef> {{ 'EventYearText' | translate:lang }} </md-header-cell>
-      <md-cell *cdkCellDef="let row"> {{row.year}} </md-cell>
+      <mat-header-cell *cdkHeaderCellDef> {{ 'EventYearText' | translate:lang }} </mat-header-cell>
+      <mat-cell *cdkCellDef="let row"> {{row.year}} </mat-cell>
     </ng-container>
 
     <ng-container cdkColumnDef="actions">
-      <md-header-cell *cdkHeaderCellDef></md-header-cell>
-      <md-cell *cdkCellDef="let row">
+      <mat-header-cell *cdkHeaderCellDef></mat-header-cell>
+      <mat-cell *cdkCellDef="let row">
         <button
-          md-button
+          mat-button
           color="primary"
           [routerLink]="['/dashboard/events', row.id, 'participants']">
           {{ 'SeeParticipantsText' | translate:lang }}
@@ -41,22 +41,22 @@
 
         <button
           *ngIf="admin"
-          md-raised-button
+          mat-raised-button
           color="accent"
           (click)="onOpenEventDialog(true, row.id)">
           {{ 'EditEventButtonText' | translate:lang }}
         </button>
-      </md-cell>
+      </mat-cell>
     </ng-container>
 
-    <md-header-row *cdkHeaderRowDef="['name', 'shortName', 'year', 'actions']"></md-header-row>
+    <mat-header-row *cdkHeaderRowDef="['name', 'shortName', 'year', 'actions']"></mat-header-row>
 
-    <md-row *cdkRowDef="let row; columns: ['name', 'shortName', 'year', 'actions']"></md-row>
-  </md-table>
+    <mat-row *cdkRowDef="let row; columns: ['name', 'shortName', 'year', 'actions']"></mat-row>
+  </mat-table>
 
-  <md-paginator [length]="pagination.length"
+  <mat-paginator [length]="pagination.length"
                 [pageSize]="pagination.pageSize"
                 [pageSizeOptions]="pagination.defaultPageSizeOptions()"
                 (page)="onPageOptionsChange($event)">
-  </md-paginator>
+  </mat-paginator>
 </div>

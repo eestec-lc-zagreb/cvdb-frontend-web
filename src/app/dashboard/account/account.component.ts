@@ -5,7 +5,7 @@ import { UserData } from '../shared/user-data.model';
 import { AuthenticationService } from '../../authentication/shared/authentication.service';
 import { LoadingBarService } from '../../core/shared/loading-bar.service';
 import { PasswordDialogComponent } from './password-dialog/password-dialog.component';
-import { MdDialog, MdDialogRef } from '@angular/material';
+import { MatDialog, MatDialogRef } from '@angular/material';
 import { UserService } from 'app/users/shared/user.service';
 
 @Component({
@@ -23,7 +23,7 @@ export class AccountComponent implements OnInit {
   constructor(private userService: UserService,
               private alertService: AlertService,
               private loadingBarService: LoadingBarService,
-              public dialog: MdDialog) {
+              public dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -65,8 +65,7 @@ export class AccountComponent implements OnInit {
   onOpenChangePasswordDialog() {
     this.openPasswordDialog();
   }
-
-  private openPasswordDialog(): MdDialogRef<PasswordDialogComponent> {
+  private openPasswordDialog(): MatDialogRef<PasswordDialogComponent> {
     return this.dialog.open(PasswordDialogComponent, {
       data: {
         id: this.id,

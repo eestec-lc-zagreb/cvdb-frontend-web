@@ -1,10 +1,11 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { StudentData } from '../../../students/shared/student-data.model';
-import { MD_DIALOG_DATA, MdDialogRef } from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { LoadingBarService } from '../../../core/shared/loading-bar.service';
 import { AlertService } from '../../../core/alert.service';
 import { StudentService } from '../../../students/shared/student.service';
 import { Observable } from 'rxjs/Observable';
+import { STUDY_PROGRAMMES } from '../../../shared/app.constants';
 
 @Component({
   selector: 'app-student-dialog',
@@ -15,14 +16,18 @@ export class StudentDialogComponent implements OnInit {
 
   student: StudentData;
 
-  constructor(public dialogRef: MdDialogRef<StudentDialogComponent>,
-              @Inject(MD_DIALOG_DATA) public data: any,
+  studyProgrammes: string[];
+  selectedStudyProgramme: string;
+
+  constructor(public dialogRef: MatDialogRef<StudentDialogComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: any,
               private loadingBarService: LoadingBarService,
               private alertService: AlertService,
               private studentService: StudentService) { }
 
   ngOnInit() {
     this.student = new StudentData();
+    this.studyProgrammes = STUDY_PROGRAMMES;
 
     if (this.data.editMode) {
       this.getStudentData();
@@ -37,7 +42,7 @@ export class StudentDialogComponent implements OnInit {
     if (this.data.editMode) {
       studentDataObservable = this.studentService.updateStudent(this.student);
     } else {
-      studentDataObservable = this.studentService.updateStudent(this.student);
+      studentDataObservable = this.studentService.createStudent(this.student);
     }
 
     studentDataObservable.subscribe(

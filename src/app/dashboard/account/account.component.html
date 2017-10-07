@@ -9,14 +9,14 @@
     <th>{{ 'NamePlaceholder' | translate:lang }}</th>
     <td>
       <form>
-        <md-input-container style="width: 100%">
+        <mat-input-container style="width: 100%">
           <input
             name="name"
-            mdInput
+            matInput
             required
             [(ngModel)]="user.name"
             [value]="user.name">
-        </md-input-container>
+        </mat-input-container>
       </form>
     </td>
   </tr>
@@ -41,14 +41,14 @@
 <br />
 
 <button
-  md-raised-button
+  mat-raised-button
   color="primary"
   (click)="onSubmitChanges()">
   {{ 'SaveChangesText' | translate:lang }}
 </button>
 
 <button
-  md-button
+  mat-button
   color="primary"
   (click)="onOpenChangePasswordDialog()">
   {{ 'ChangePasswordText' | translate:lang }}

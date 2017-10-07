@@ -2,7 +2,7 @@
 
 <button
   *ngIf="admin"
-  md-raised-button
+  mat-raised-button
   color="primary"
   (click)="onOpenStudentDialog(false)">
   {{ 'AddNewStudentButtonText' | translate:lang }}
@@ -12,49 +12,49 @@
 <br />
 
 <div class="mat-elevation-z8">
-  <md-table #table [dataSource]="studentsDataSource">
+  <mat-table #table [dataSource]="studentsDataSource">
 
     <ng-container cdkColumnDef="firstName">
-      <md-header-cell *cdkHeaderCellDef> {{ 'StudentFirstNameText' | translate:lang }} </md-header-cell>
-      <md-cell *cdkCellDef="let row"> {{row.firstName}} </md-cell>
+      <mat-header-cell *cdkHeaderCellDef> {{ 'StudentFirstNameText' | translate:lang }} </mat-header-cell>
+      <mat-cell *cdkCellDef="let row"> {{row.firstName}} </mat-cell>
     </ng-container>
 
     <ng-container cdkColumnDef="lastName">
-      <md-header-cell *cdkHeaderCellDef> {{ 'StudentLastNameText' | translate:lang }} </md-header-cell>
-      <md-cell *cdkCellDef="let row"> {{row.lastName}} </md-cell>
+      <mat-header-cell *cdkHeaderCellDef> {{ 'StudentLastNameText' | translate:lang }} </mat-header-cell>
+      <mat-cell *cdkCellDef="let row"> {{row.lastName}} </mat-cell>
     </ng-container>
 
     <ng-container cdkColumnDef="year">
-      <md-header-cell *cdkHeaderCellDef> {{ 'StudentYearText' | translate:lang }} </md-header-cell>
-      <md-cell *cdkCellDef="let row"> {{row.year}} </md-cell>
+      <mat-header-cell *cdkHeaderCellDef> {{ 'StudentYearText' | translate:lang }} </mat-header-cell>
+      <mat-cell *cdkCellDef="let row"> {{row.year}} </mat-cell>
     </ng-container>
 
     <ng-container cdkColumnDef="studyProgramme">
-      <md-header-cell *cdkHeaderCellDef> {{ 'StudentStudyProgrammeText' | translate:lang }} </md-header-cell>
-      <md-cell *cdkCellDef="let row"> {{row.studyProgramme}} </md-cell>
+      <mat-header-cell *cdkHeaderCellDef> {{ 'StudentStudyProgrammeText' | translate:lang }} </mat-header-cell>
+      <mat-cell *cdkCellDef="let row"> {{row.studyProgramme}} </mat-cell>
     </ng-container>
 
     <ng-container cdkColumnDef="actions">
-      <md-header-cell *cdkHeaderCellDef></md-header-cell>
-      <md-cell *cdkCellDef="let row">
+      <mat-header-cell *cdkHeaderCellDef></mat-header-cell>
+      <mat-cell *cdkCellDef="let row">
         <button
           *ngIf="admin"
-          md-raised-button
+          mat-raised-button
           color="accent"
           (click)="onOpenStudentDialog(true, row.id)">
           {{ 'EditStudentButtonText' | translate:lang }}
         </button>
-      </md-cell>
+      </mat-cell>
     </ng-container>
 
-    <md-header-row *cdkHeaderRowDef="['firstName', 'lastName', 'year', 'studyProgramme', 'actions']"></md-header-row>
+    <mat-header-row *cdkHeaderRowDef="['firstName', 'lastName', 'year', 'studyProgramme', 'actions']"></mat-header-row>
 
-    <md-row *cdkRowDef="let row; columns: ['firstName', 'lastName', 'year', 'studyProgramme', 'actions']"></md-row>
-  </md-table>
+    <mat-row *cdkRowDef="let row; columns: ['firstName', 'lastName', 'year', 'studyProgramme', 'actions']"></mat-row>
+  </mat-table>
 
-  <md-paginator [length]="pagination.length"
+  <mat-paginator [length]="pagination.length"
                 [pageSize]="pagination.pageSize"
                 [pageSizeOptions]="pagination.defaultPageSizeOptions()"
                 (page)="onPageOptionsChange($event)">
-  </md-paginator>
+  </mat-paginator>
 </div>

@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MD_DIALOG_DATA, MdDialogRef } from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { LoadingBarService } from '../../../core/shared/loading-bar.service';
 import { EventService } from '../../../events/shared/event.service';
 import { EventData } from '../../../events/shared/event-data.model';
@@ -15,8 +15,8 @@ export class EventDialogComponent implements OnInit {
 
   event: EventData;
 
-  constructor(public dialogRef: MdDialogRef<EventDialogComponent>,
-              @Inject(MD_DIALOG_DATA) public data: any,
+  constructor(public dialogRef: MatDialogRef<EventDialogComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: any,
               private loadingBarService: LoadingBarService,
               private alertService: AlertService,
               private eventService: EventService) { }

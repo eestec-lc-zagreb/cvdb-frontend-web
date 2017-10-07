@@ -3,13 +3,13 @@ import { StudentData } from '../shared/student-data.model';
 import { Pagination } from '../../shared/pagination.model';
 import { Subscription } from 'rxjs/Subscription';
 import { Language } from 'angular-l10n';
-import { CollectionViewer, DataSource } from '@angular/cdk';
+import { DataSource } from '@angular/cdk/collections';
 import { StudentService } from '../shared/student.service';
 import { Observable } from 'rxjs/Observable';
 import { ActivatedRoute } from '@angular/router';
 import { AlertService } from '../../core/alert.service';
 import { LoadingBarService } from '../../core/shared/loading-bar.service';
-import { MdDialog, MdDialogRef, PageEvent } from '@angular/material';
+import { MatDialog, MatDialogRef, PageEvent } from '@angular/material';
 import { UserCredentials } from '../../authentication/shared/user-credentials.model';
 import { AuthenticationService } from 'app/authentication/shared/authentication.service';
 import { Page } from '../../shared/page.model';
@@ -37,7 +37,7 @@ export class StudentListComponent implements OnInit, OnDestroy {
               private studentService: StudentService,
               private alertService: AlertService,
               private loadingBarService: LoadingBarService,
-              public dialog: MdDialog) {
+              public dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -101,7 +101,7 @@ export class StudentListComponent implements OnInit, OnDestroy {
     this.openStudentDialog(editMode, studentId);
   }
 
-  private openStudentDialog(editMode: boolean, studentId?: number): MdDialogRef<StudentDialogComponent> {
+  private openStudentDialog(editMode: boolean, studentId?: number): MatDialogRef<StudentDialogComponent> {
     return this.dialog.open(StudentDialogComponent, {
       data: {
         title: editMode ? 'EditStudentButtonText' : 'AddNewStudentButtonText',
@@ -121,11 +121,11 @@ export class StudentsDataSource
     super();
   }
 
-  connect(collectionViewer: CollectionViewer): Observable<StudentData[]> {
+  connect(): Observable<StudentData[]> {
     return this.studentService.studentsSubject;
   }
 
-  disconnect(collectionViewer: CollectionViewer): void {
+  disconnect(): void {
   }
 
 

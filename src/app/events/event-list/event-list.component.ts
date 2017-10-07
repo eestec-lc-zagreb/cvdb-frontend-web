@@ -2,11 +2,11 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { EventService } from '../shared/event.service';
 import { EventData } from '../shared/event-data.model';
 import { AlertService } from '../../core/alert.service';
-import { CollectionViewer, DataSource } from '@angular/cdk';
+import {DataSource} from '@angular/cdk/collections';
 import { Observable } from 'rxjs/Observable';
 import { LoadingBarService } from '../../core/shared/loading-bar.service';
 import { Language } from 'angular-l10n';
-import { MdDialog, MdDialogRef, PageEvent } from '@angular/material';
+import { MatDialog, MatDialogRef, PageEvent } from '@angular/material';
 import { Pagination } from '../../shared/pagination.model';
 import { Page } from '../../shared/page.model';
 import { UserCredentials } from '../../authentication/shared/user-credentials.model';
@@ -37,7 +37,7 @@ export class EventListComponent implements OnInit, OnDestroy {
               private eventService: EventService,
               private alertService: AlertService,
               private loadingBarService: LoadingBarService,
-              public dialog: MdDialog) {
+              public dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -122,7 +122,7 @@ export class EventListComponent implements OnInit, OnDestroy {
     this.openEventDialog(editMode, eventId);
   }
 
-  private openEventDialog(editMode: boolean, eventId?: number): MdDialogRef<EventDialogComponent> {
+  private openEventDialog(editMode: boolean, eventId?: number): MatDialogRef<EventDialogComponent> {
     return this.dialog.open(EventDialogComponent, {
       data: {
         title: editMode ? 'EditEventButtonText' : 'AddNewEventButtonText',
@@ -141,11 +141,11 @@ export class EventsDataSource extends DataSource<EventData> {
     super();
   }
 
-  connect(collectionViewer: CollectionViewer): Observable<EventData[]> {
+  connect(): Observable<EventData[]> {
     return this.eventService.eventsSubject;
   }
 
-  disconnect(collectionViewer: CollectionViewer): void {
+  disconnect(): void {
   }
 
 

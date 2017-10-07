@@ -1,7 +1,7 @@
 import { AfterContentInit, AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { SidebarService } from '../core/shared/sidebar.service';
 import { Subscription } from 'rxjs/Subscription';
-import { MdSidenav } from '@angular/material';
+import { MatSidenav } from '@angular/material';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +10,7 @@ import { MdSidenav } from '@angular/material';
 })
 export class DashboardComponent implements OnInit, AfterViewInit, AfterContentInit, OnDestroy {
 
-  @ViewChild('sidenav') sidenav: MdSidenav;
+  @ViewChild('sidenav') sidenav: MatSidenav;
 
   menuToggleSubscription: Subscription;
 

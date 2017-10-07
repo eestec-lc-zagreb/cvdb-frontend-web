@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { AlertService } from '../alert.service';
-import { MdButtonToggleChange } from '@angular/material';
+import { MatButtonToggleChange } from '@angular/material';
 import { Language, LocaleService } from 'angular-l10n';
 import { SidebarService } from '../shared/sidebar.service';
 

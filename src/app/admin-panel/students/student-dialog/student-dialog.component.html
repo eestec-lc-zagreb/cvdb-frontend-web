@@ -1,53 +1,61 @@
 <h2
   *ngIf="data"
-  md-dialog-title>
+  mat-dialog-title>
   {{ data.title | translate:lang }}
 </h2>
 
-<md-dialog-content>
+<mat-dialog-content>
   <form #form="ngForm" (submit)="onSubmitStudentData()">
-    <md-input-container style="width: 100%">
+    <mat-input-container style="width: 100%">
       <input
         name="firstName"
         type="text"
         [placeholder]="'StudentFirstNameText' | translate:lang"
-        mdInput
+        matInput
         required
         [(ngModel)]="student.firstName">
-    </md-input-container>
+    </mat-input-container>
 
-    <md-input-container style="width: 100%">
+    <mat-input-container style="width: 100%">
       <input
         name="lastName"
         type="text"
         [placeholder]="'StudentLastNameText' | translate:lang"
-        mdInput
+        matInput
         required
         [(ngModel)]="student.lastName">
-    </md-input-container>
+    </mat-input-container>
 
-    <md-input-container style="width: 100%">
+    <mat-input-container style="width: 100%">
       <input
         name="year"
         type="number"
         [placeholder]="'StudentYearText' | translate:lang"
-        mdInput
+        matInput
         required
         [(ngModel)]="student.year">
-    </md-input-container>
+    </mat-input-container>
 
-    <md-input-container style="width: 100%">
-      <input
+    <mat-input-container style="width: 100%">
+      <mat-select
         name="studyProgramme"
-        type="text"
         [placeholder]="'StudentStudyProgrammeText' | translate:lang"
-        mdInput
         required
         [(ngModel)]="student.studyProgramme">
-    </md-input-container>
+
+        <mat-option
+          *ngFor="let studyProgramme of studyProgrammes"
+          [value]="studyProgramme">
+          {{ studyProgramme }}
+        </mat-option>
+
+      </mat-select>
+    </mat-input-container>
+
+
 
     <button
-      md-raised-button
+      mat-raised-button
       type="submit"
       color="primary"
       [disabled]="!form.valid">
@@ -55,10 +63,10 @@
     </button>
 
     <button
-      md-button
-      [md-dialog-close]="false">
+      mat-button
+      [mat-dialog-close]="false">
       Odustani
     </button>
   </form>
-</md-dialog-content>
+</mat-dialog-content>
 

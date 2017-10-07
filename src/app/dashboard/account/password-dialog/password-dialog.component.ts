@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MD_DIALOG_DATA, MdDialogRef } from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { Language } from 'angular-l10n';
 import { NgForm } from '@angular/forms';
 import { AlertService } from '../../../core/alert.service';
@@ -15,8 +15,8 @@ export class PasswordDialogComponent implements OnInit {
 
   @Language() lang: string;
 
-  constructor(public dialogRef: MdDialogRef<PasswordDialogComponent>,
-              @Inject(MD_DIALOG_DATA) public data: any,
+  constructor(public dialogRef: MatDialogRef<PasswordDialogComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: any,
               private userService: UserService,
               private alertService: AlertService,
               private loadingBarService: LoadingBarService) { }
