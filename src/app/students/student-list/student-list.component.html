@@ -1,3 +1,60 @@
-<p>
-  student-list works!
-</p>
+<h2>{{ 'StudentListHeadingText' | translate:lang }}</h2>
+
+<button
+  *ngIf="admin"
+  md-raised-button
+  color="primary"
+  (click)="onOpenStudentDialog(false)">
+  {{ 'AddNewStudentButtonText' | translate:lang }}
+</button>
+
+<br />
+<br />
+
+<div class="mat-elevation-z8">
+  <md-table #table [dataSource]="studentsDataSource">
+
+    <ng-container cdkColumnDef="firstName">
+      <md-header-cell *cdkHeaderCellDef> {{ 'StudentFirstNameText' | translate:lang }} </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.firstName}} </md-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="lastName">
+      <md-header-cell *cdkHeaderCellDef> {{ 'StudentLastNameText' | translate:lang }} </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.lastName}} </md-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="year">
+      <md-header-cell *cdkHeaderCellDef> {{ 'StudentYearText' | translate:lang }} </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.year}} </md-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="studyProgramme">
+      <md-header-cell *cdkHeaderCellDef> {{ 'StudentStudyProgrammeText' | translate:lang }} </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.studyProgramme}} </md-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="actions">
+      <md-header-cell *cdkHeaderCellDef></md-header-cell>
+      <md-cell *cdkCellDef="let row">
+        <button
+          *ngIf="admin"
+          md-raised-button
+          color="accent"
+          (click)="onOpenStudentDialog(true, row.id)">
+          {{ 'EditStudentButtonText' | translate:lang }}
+        </button>
+      </md-cell>
+    </ng-container>
+
+    <md-header-row *cdkHeaderRowDef="['firstName', 'lastName', 'year', 'studyProgramme', 'actions']"></md-header-row>
+
+    <md-row *cdkRowDef="let row; columns: ['firstName', 'lastName', 'year', 'studyProgramme', 'actions']"></md-row>
+  </md-table>
+
+  <md-paginator [length]="pagination.length"
+                [pageSize]="pagination.pageSize"
+                [pageSizeOptions]="pagination.defaultPageSizeOptions()"
+                (page)="onPageOptionsChange($event)">
+  </md-paginator>
+</div>

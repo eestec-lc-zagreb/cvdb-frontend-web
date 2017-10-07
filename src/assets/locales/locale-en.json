@@ -35,5 +35,12 @@
   "StudentsTabText": "Students",
   "EventsTabText": "Events",
   "EditEventButtonText": "Edit event",
-  "AddNewEventButtonText": "Add new event"
+  "AddNewEventButtonText": "Add new event",
+  "StudentListHeadingText": "Students",
+  "StudentFirstNameText": "First name",
+  "StudentLastNameText": "Last name",
+  "StudentYearText": "Year",
+  "StudentStudyProgrammeText": "Study programme",
+  "EditStudentButtonText": "Edit student",
+  "AddNewStudentButtonText": "Add new student"
 }

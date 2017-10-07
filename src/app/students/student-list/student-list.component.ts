@@ -97,8 +97,8 @@ export class StudentListComponent implements OnInit, OnDestroy {
     return currentUser.role === 'ADMINISTRATOR' && url === 'admin';
   }
 
-  onOpenEventDialog(editMode: boolean, eventId?: number) {
-    this.openStudentDialog(editMode, eventId);
+  onOpenStudentDialog(editMode: boolean, studentId?: number) {
+    this.openStudentDialog(editMode, studentId);
   }
 
   private openStudentDialog(editMode: boolean, studentId?: number): MdDialogRef<StudentDialogComponent> {
@@ -106,7 +106,7 @@ export class StudentListComponent implements OnInit, OnDestroy {
       data: {
         title: editMode ? 'EditStudentButtonText' : 'AddNewStudentButtonText',
         editMode: editMode,
-        eventId: studentId
+        studentId: studentId
       },
       disableClose: true
     });

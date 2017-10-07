@@ -35,5 +35,12 @@
   "StudentsTabText": "Studenti",
   "EventsTabText": "Događaji",
   "EditEventButtonText": "Uredi događaj",
-  "AddNewEventButtonText": "Dodaj novi događaj"
+  "AddNewEventButtonText": "Dodaj novi događaj",
+  "StudentListHeadingText": "Studenti",
+  "StudentFirstNameText": "Ime",
+  "StudentLastNameText": "Prezime",
+  "StudentYearText": "Godina",
+  "StudentStudyProgrammeText": "Studijski program",
+  "EditStudentButtonText": "Uredi studenta",
+  "AddNewStudentButtonText": "Dodaj novog studenta"
 }
