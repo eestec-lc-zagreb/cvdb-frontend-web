@@ -60,4 +60,14 @@ export class UserService {
         }
       );
   }
+
+  changePassword(id: number, oldPassword: string, newPassword: string, confirmation: string): Observable<Response> {
+    const requestBody: any = {
+      oldPassword: oldPassword,
+      newPassword: newPassword,
+      confirmation: confirmation
+    };
+
+    return this.http.post('/api/v1/users/' + id + '/change-password', requestBody);
+  }
 }

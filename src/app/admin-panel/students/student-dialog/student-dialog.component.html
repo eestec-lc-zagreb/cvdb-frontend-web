@@ -1,0 +1,64 @@
+<h2
+  *ngIf="data"
+  md-dialog-title>
+  {{ data.title | translate:lang }}
+</h2>
+
+<md-dialog-content>
+  <form #form="ngForm" (submit)="onSubmitStudentData()">
+    <md-input-container style="width: 100%">
+      <input
+        name="firstName"
+        type="text"
+        [placeholder]="'StudentFirstNameText' | translate:lang"
+        mdInput
+        required
+        [(ngModel)]="student.firstName">
+    </md-input-container>
+
+    <md-input-container style="width: 100%">
+      <input
+        name="lastName"
+        type="text"
+        [placeholder]="'StudentLastNameText' | translate:lang"
+        mdInput
+        required
+        [(ngModel)]="student.lastName">
+    </md-input-container>
+
+    <md-input-container style="width: 100%">
+      <input
+        name="year"
+        type="number"
+        [placeholder]="'StudentYearText' | translate:lang"
+        mdInput
+        required
+        [(ngModel)]="student.year">
+    </md-input-container>
+
+    <md-input-container style="width: 100%">
+      <input
+        name="studyProgramme"
+        type="text"
+        [placeholder]="'StudentStudyProgrammeText' | translate:lang"
+        mdInput
+        required
+        [(ngModel)]="student.studyProgramme">
+    </md-input-container>
+
+    <button
+      md-raised-button
+      type="submit"
+      color="primary"
+      [disabled]="!form.valid">
+      Spremi
+    </button>
+
+    <button
+      md-button
+      [md-dialog-close]="false">
+      Odustani
+    </button>
+  </form>
+</md-dialog-content>
+

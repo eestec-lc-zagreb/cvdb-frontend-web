@@ -25,7 +25,6 @@ import { SubscriptionsService } from './dashboard/shared/subscriptions.service';
 import { ParticipantsComponent } from './events/participants/participants.component';
 import { EventService } from './events/shared/event.service';
 import { EventListComponent } from './events/event-list/event-list.component';
-import { UserService } from './dashboard/shared/user.service';
 import { PasswordDialogComponent } from './dashboard/account/password-dialog/password-dialog.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { UsersComponent } from './admin-panel/users/users.component';
@@ -34,6 +33,9 @@ import { EventsComponent } from './admin-panel/events/events.component';
 import { EventDialogComponent } from './admin-panel/events/event-dialog/event-dialog.component';
 import { UserListComponent } from './users/user-list/user-list.component';
 import { StudentListComponent } from './students/student-list/student-list.component';
+import { StudentService } from './students/shared/student.service';
+import { StudentDialogComponent } from './admin-panel/students/student-dialog/student-dialog.component';
+import { UserService } from './users/shared/user.service';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,8 @@ import { StudentListComponent } from './students/student-list/student-list.compo
     EventsComponent,
     EventDialogComponent,
     UserListComponent,
-    StudentListComponent
+    StudentListComponent,
+    StudentDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -75,12 +78,14 @@ import { StudentListComponent } from './students/student-list/student-list.compo
     SidebarService,
     SubscriptionsService,
     EventService,
-    UserService
+    UserService,
+    StudentService
   ],
   entryComponents: [
     DialogComponent,
     PasswordDialogComponent,
-    EventDialogComponent
+    EventDialogComponent,
+    StudentDialogComponent
   ],
   bootstrap: [AppComponent]
 })

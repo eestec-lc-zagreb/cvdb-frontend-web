@@ -2,9 +2,9 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MD_DIALOG_DATA, MdDialogRef } from '@angular/material';
 import { Language } from 'angular-l10n';
 import { NgForm } from '@angular/forms';
-import { UserService } from '../../shared/user.service';
 import { AlertService } from '../../../core/alert.service';
 import { LoadingBarService } from '../../../core/shared/loading-bar.service';
+import { UserService } from '../../../users/shared/user.service';
 
 @Component({
   selector: 'app-password-dialog',

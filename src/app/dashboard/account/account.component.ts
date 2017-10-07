@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Language } from 'angular-l10n';
-import { UserService } from '../shared/user.service';
 import { AlertService } from '../../core/alert.service';
 import { UserData } from '../shared/user-data.model';
 import { AuthenticationService } from '../../authentication/shared/authentication.service';
 import { LoadingBarService } from '../../core/shared/loading-bar.service';
 import { PasswordDialogComponent } from './password-dialog/password-dialog.component';
 import { MdDialog, MdDialogRef } from '@angular/material';
+import { UserService } from 'app/users/shared/user.service';
 
 @Component({
   selector: 'app-account',
@@ -31,7 +31,7 @@ export class AccountComponent implements OnInit {
     this.user = new UserData();
 
     this.loadingBarService.start();
-    this.userService.getUserDetails(this.id)
+    this.userService.getUser(this.id)
       .subscribe(
         (userData: UserData) => {
           this.user = userData;
@@ -48,23 +48,18 @@ export class AccountComponent implements OnInit {
 
   onSubmitChanges() {
     this.loadingBarService.start();
-    this.userService.updateUserData(this.id, this.user.name)
+    this.userService.updateUser(this.user)
       .subscribe(
-        response => {
-          if (response.status === 200) {
-            this.alertService.success('User data updated');
+        (user: UserData) => {
+          this.alertService.success('User data updated');
 
-            this.loadingBarService.stop();
-          } else {
-            this.alertService.error(response.json());
-
-            this.loadingBarService.stop();
-          }
+          this.loadingBarService.stop();
         },
         error => {
           this.alertService.error(error);
-        }
-      );
+
+          this.loadingBarService.stop();
+        });
   }
 
   onOpenChangePasswordDialog() {
