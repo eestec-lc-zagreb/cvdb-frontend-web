@@ -17,7 +17,6 @@ export class StudentDialogComponent implements OnInit {
   student: StudentData;
 
   studyProgrammes: string[];
-  selectedStudyProgramme: string;
 
   constructor(public dialogRef: MatDialogRef<StudentDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any,

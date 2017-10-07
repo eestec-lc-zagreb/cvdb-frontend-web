@@ -1,0 +1,34 @@
+<h2
+  *ngIf="data"
+  mat-dialog-title>
+  {{ data.title | translate:lang }}
+</h2>
+
+<mat-dialog-content>
+  <form #form="ngForm" (submit)="onSubmitUserData()">
+    <mat-input-container style="width: 100%">
+      <input
+        name="name"
+        type="text"
+        [placeholder]="'UserNameText' | translate:lang"
+        matInput
+        required
+        [(ngModel)]="user.name">
+    </mat-input-container>
+
+    <button
+      mat-raised-button
+      type="submit"
+      color="primary"
+      [disabled]="!form.valid">
+      Spremi
+    </button>
+
+    <button
+      mat-button
+      [mat-dialog-close]="false">
+      Odustani
+    </button>
+  </form>
+</mat-dialog-content>
+
