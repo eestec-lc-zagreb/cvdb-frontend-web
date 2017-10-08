@@ -42,5 +42,11 @@
   "StudentYearText": "Godina",
   "StudentStudyProgrammeText": "Studijski program",
   "EditStudentButtonText": "Uredi studenta",
-  "AddNewStudentButtonText": "Dodaj novog studenta"
+  "AddNewStudentButtonText": "Dodaj novog studenta",
+  "UserListHeadingText": "Korisnici",
+  "UserNameText": "Naziv",
+  "UserUsernameText": "Korisničko ime",
+  "UserCreatedAtText": "Datum kreiranja",
+  "EditUserButtonText": "Uredi",
+  "AddNewUserButtonText": "Dodaj novog korisnika"
 }

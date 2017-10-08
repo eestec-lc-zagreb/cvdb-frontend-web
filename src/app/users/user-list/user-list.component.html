@@ -1,3 +1,55 @@
-<p>
-  user-list works!
-</p>
+<h2>{{ 'UserListHeadingText' | translate:lang }}</h2>
+
+<button
+  *ngIf="admin"
+  mat-raised-button
+  color="primary"
+  (click)="onOpenUserDialog(false)">
+  {{ 'AddNewUserButtonText' | translate:lang }}
+</button>
+
+<br />
+<br />
+
+<div class="mat-elevation-z8">
+  <mat-table #table [dataSource]="usersDataSource">
+
+    <ng-container cdkColumnDef="name">
+      <mat-header-cell *cdkHeaderCellDef> {{ 'UserNameText' | translate:lang }} </mat-header-cell>
+      <mat-cell *cdkCellDef="let row"> {{row.name}} </mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="username">
+      <mat-header-cell *cdkHeaderCellDef> {{ 'UserUsernameText' | translate:lang }} </mat-header-cell>
+      <mat-cell *cdkCellDef="let row"> {{row.username}} </mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="createdAt">
+      <mat-header-cell *cdkHeaderCellDef> {{ 'UserCreatedAtText' | translate:lang }} </mat-header-cell>
+      <mat-cell *cdkCellDef="let row"> {{row.createdAt | date:'dd.MM.yyyy. HH:mm'}} </mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="actions">
+      <mat-header-cell *cdkHeaderCellDef></mat-header-cell>
+      <mat-cell *cdkCellDef="let row">
+        <button
+          *ngIf="admin"
+          mat-raised-button
+          color="accent"
+          (click)="onOpenUserDialog(true, row.id)">
+          {{ 'EditUserButtonText' | translate:lang }}
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *cdkHeaderRowDef="['name', 'username', 'createdAt', 'actions']"></mat-header-row>
+
+    <mat-row *cdkRowDef="let row; columns: ['name', 'username', 'createdAt', 'actions']"></mat-row>
+  </mat-table>
+
+  <mat-paginator [length]="pagination.length"
+                 [pageSize]="pagination.pageSize"
+                 [pageSizeOptions]="pagination.defaultPageSizeOptions()"
+                 (page)="onPageOptionsChange($event)">
+  </mat-paginator>
+</div>

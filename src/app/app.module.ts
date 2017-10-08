@@ -87,7 +87,8 @@ import { UserDialogComponent } from './admin-panel/users/user-dialog/user-dialog
     DialogComponent,
     PasswordDialogComponent,
     EventDialogComponent,
-    StudentDialogComponent
+    StudentDialogComponent,
+    UserDialogComponent
   ],
   bootstrap: [AppComponent]
 })

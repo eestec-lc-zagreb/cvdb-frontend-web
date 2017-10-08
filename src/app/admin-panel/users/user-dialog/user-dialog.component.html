@@ -16,6 +16,16 @@
         [(ngModel)]="user.name">
     </mat-input-container>
 
+    <mat-input-container style="width: 100%">
+      <input
+        name="username"
+        type="text"
+        [placeholder]="'UserUsernameText' | translate:lang"
+        matInput
+        required
+        [(ngModel)]="user.username">
+    </mat-input-container>
+
     <button
       mat-raised-button
       type="submit"

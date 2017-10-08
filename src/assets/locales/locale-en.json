@@ -42,5 +42,11 @@
   "StudentYearText": "Year",
   "StudentStudyProgrammeText": "Study programme",
   "EditStudentButtonText": "Edit student",
-  "AddNewStudentButtonText": "Add new student"
+  "AddNewStudentButtonText": "Add new student",
+  "UserListHeadingText": "Users",
+  "UserNameText": "Name",
+  "UserUsernameText": "Username",
+  "UserCreatedAtText": "Created at",
+  "EditUserButtonText": "Edit",
+  "AddNewUserButtonText": "Add new user"
 }
