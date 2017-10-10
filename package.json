@@ -4,7 +4,9 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "node_modules/@angular/cli/bin/ng serve --proxy-config ./proxy.conf.json",
+    "start": "node_modules/@angular/cli/bin/ng serve --proxy-config ./proxy-dev.conf.json",
+    "dev": "node_modules/@angular/cli/bin/ng serve --proxy-config ./proxy-dev.conf.json",
+    "staging": "node_modules/@angular/cli/bin/ng serve --proxy-config ./proxy-staging.conf.json",
     "build": "ng build --prod --aot",
     "test": "node_modules/@angular/cli/bin/ng test --progress=false --browsers=ChromeHeadless --singleRun",
     "lint": "node_modules/@angular/cli/bin/ng lint",

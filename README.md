@@ -12,17 +12,21 @@ In Settings/Editor/Code Style/TypeScript/Punctuation select 'Use single quotes'.
 
 If you run 
 
-    ng serve --proxy-config ./proxy.conf.json
+    npm run dev
      
-it will proxy requests to your backend.
+it will proxy requests to your mock server.
+
+## Staging server
+
+If you run 
+
+    npm run staging
+     
+it will proxy requests to your real backend.
 
 ## Build
 
 Run `ng build --prod --aot` to build the project.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Running end-to-end tests
 

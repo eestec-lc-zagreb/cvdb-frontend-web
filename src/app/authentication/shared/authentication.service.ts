@@ -33,7 +33,7 @@ export class AuthenticationService {
     return this.http.get('/api/v1/auth/logout', options)
       .subscribe(
         response => {
-          if (response.status === 204) {
+          if (response.status === 200) {
             sessionStorage.removeItem('currentUser');
 
             this.alertService.success('You successfully logged out');
