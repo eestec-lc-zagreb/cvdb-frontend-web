@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import { AlertService } from '../../core/alert.service';
 import { LoadingBarService } from '../../core/shared/loading-bar.service';
 import { Language } from 'angular-l10n';
+import { RequestOptions } from '@angular/http';
 
 @Component({
   selector: 'app-participants',
@@ -19,6 +20,8 @@ export class ParticipantsComponent implements OnInit {
   participants: ParticipantData[];
 
   participantsDataSource: ParticipantsDataSource;
+
+  fileList: FileList;
 
   @Language() lang: string;
 
@@ -51,6 +54,16 @@ export class ParticipantsComponent implements OnInit {
           this.loadingBarService.stop();
         }
       );
+  }
+
+
+  fileChange(event) {
+    this.fileList = event.target.files;
+  }
+
+  onAddParticipant() {
+    // this.eventService.addParticipantToEvent(1, this.fileList);
+    console.log('Submitted');
   }
 
 }
