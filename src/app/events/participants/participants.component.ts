@@ -21,8 +21,6 @@ export class ParticipantsComponent implements OnInit {
 
   participantsDataSource: ParticipantsDataSource;
 
-  fileList: FileList;
-
   @Language() lang: string;
 
   constructor(private route: ActivatedRoute,
@@ -56,14 +54,8 @@ export class ParticipantsComponent implements OnInit {
       );
   }
 
-
-  fileChange(event) {
-    this.fileList = event.target.files;
-  }
-
-  onAddParticipant() {
-    // this.eventService.addParticipantToEvent(1, this.fileList);
-    console.log('Submitted');
+  onNewParticipant() {
+    this.getParticipantsForEvent();
   }
 
 }

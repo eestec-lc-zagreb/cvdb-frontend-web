@@ -1,52 +1,8 @@
 <h2>{{ eventId }}</h2>
 
-<br />
+<app-add-participant (newParticipant)="onNewParticipant()"></app-add-participant>
 
-<!--<mat-expansion-panel>-->
-  <!--<mat-expansion-panel-header>-->
-    <!--<mat-panel-title>-->
-      <!--Personal data-->
-    <!--</mat-panel-title>-->
-    <!--<mat-panel-description>-->
-      <!--Type your name and age-->
-    <!--</mat-panel-description>-->
-  <!--</mat-expansion-panel-header>-->
-
-  <!--<mat-form-field>-->
-    <!--<input matInput placeholder="First name">-->
-  <!--</mat-form-field>-->
-
-  <!--<mat-form-field>-->
-    <!--<input matInput placeholder="Age">-->
-  <!--</mat-form-field>-->
-<!--</mat-expansion-panel>-->
-
-
-<form #form="ngForm">
-  <mat-form-field>
-    <mat-select placeholder="Odaberi studenta">
-      <mat-option *ngFor="let food of foods" [value]="food.value">
-        {{ food.viewValue }}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <input
-    type="file"
-    (change)="fileChange($event)"
-    #fileInput
-    placeholder="Upload file"
-    accept=".pdf,.doc,.docx">
-
-  <button
-    mat-raised-button
-    type="submit"
-    color="primary"
-    [disabled]="!form.valid">
-    Dodaj
-  </button>
-</form>
-
+<br/>
 <br/>
 
 <div class="mat-elevation-z8">

@@ -1,0 +1,44 @@
+<button
+  *ngIf="!addParticipantMode"
+  mat-raised-button
+  color="primary"
+  (click)="onAddNewParticipant()">
+  Dodaj sudionike
+</button>
+
+<form #form="ngForm" *ngIf="addParticipantMode" (submit)="onSubmit()">
+  <mat-form-field>
+    <mat-select
+      name="participant"
+      ngModel
+      #participant="ngModel"
+      placeholder="Odaberi studenta"
+      (change)="onParticipantChange($event)"
+      required>
+
+      <mat-option
+        *ngFor="let student of students"
+        [value]="student.id">
+        {{ student.firstName }} {{ student.lastName }}
+      </mat-option>
+
+    </mat-select>
+  </mat-form-field>
+
+  <input
+    type="file"
+    name="cv"
+    (change)="fileChange($event)"
+    #fileInput
+    placeholder="Upload file"
+    accept=".pdf,.doc,.docx"
+    required>
+
+  <button
+    mat-raised-button
+    type="submit"
+    color="primary"
+    [disabled]="!form.valid || !fileList">
+    Dodaj
+  </button>
+</form>

@@ -37,6 +37,7 @@ import { StudentService } from './students/shared/student.service';
 import { StudentDialogComponent } from './admin-panel/students/student-dialog/student-dialog.component';
 import { UserService } from './users/shared/user.service';
 import { UserDialogComponent } from './admin-panel/users/user-dialog/user-dialog.component';
+import { AddParticipantComponent } from './events/add-participant/add-participant.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { UserDialogComponent } from './admin-panel/users/user-dialog/user-dialog
     UserListComponent,
     StudentListComponent,
     StudentDialogComponent,
-    UserDialogComponent
+    UserDialogComponent,
+    AddParticipantComponent
   ],
   imports: [
     BrowserModule,
