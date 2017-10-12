@@ -15,9 +15,20 @@
 
   <mat-card-content>
     <mat-chip-list>
-      <mat-chip color="primary"><strong>{{ subscription.eventStatistics.numberOfParticipants }}</strong> participants</mat-chip>
-      <mat-chip color="accent">Most students study <strong>{{ subscription.eventStatistics.mostCommonStudyProgramme }}</strong></mat-chip>
-      <mat-chip>Most students are <strong>{{ subscription.eventStatistics.mostCommonYear }}.</strong> year</mat-chip>
+      <mat-chip color="primary">
+        <strong>{{ subscription.eventStatistics.numberOfParticipants }}</strong> &nbsp;
+        {{ 'ParticipantsText' | translate:lang }}
+      </mat-chip>
+
+      <mat-chip color="accent">
+        {{ 'MostStudentsStudyText' | translate:lang }} &nbsp;
+        <strong>{{ subscription.eventStatistics.mostCommonStudyProgramme }}</strong>
+      </mat-chip>
+
+      <mat-chip>
+        {{ 'MostStudentsAreText' | translate:lang }} &nbsp;
+        <strong>{{ subscription.eventStatistics.mostCommonYear }}.</strong> {{ 'YearSmallText' | translate:lang }}
+      </mat-chip>
     </mat-chip-list>
   </mat-card-content>
 

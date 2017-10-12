@@ -48,5 +48,11 @@
   "UserUsernameText": "Username",
   "UserCreatedAtText": "Created at",
   "EditUserButtonText": "Edit",
-  "AddNewUserButtonText": "Add new user"
+  "AddNewUserButtonText": "Add new user",
+  "SaveButtonText": "Save",
+  "CancelButtonText": "Cancel",
+  "ParticipantsText": "participants",
+  "MostStudentsStudyText": "Most students study",
+  "MostStudentsAreText": "Most students are",
+  "YearSmallText": "year"
 }

@@ -41,13 +41,13 @@
       type="submit"
       color="primary"
       [disabled]="!form.valid">
-      Spremi
+      {{ 'SaveButtonText' | translate:lang }}
     </button>
 
     <button
       mat-button
       [mat-dialog-close]="false">
-      Odustani
+      {{ 'CancelButtonText' | translate:lang }}
     </button>
   </form>
 </mat-dialog-content>

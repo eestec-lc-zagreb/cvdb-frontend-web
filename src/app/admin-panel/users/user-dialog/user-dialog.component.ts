@@ -5,6 +5,7 @@ import { LoadingBarService } from '../../../core/shared/loading-bar.service';
 import { AlertService } from '../../../core/alert.service';
 import { UserService } from '../../../users/shared/user.service';
 import { Observable } from 'rxjs/Observable';
+import { Language } from 'angular-l10n';
 
 @Component({
   selector: 'app-user-dialog',
@@ -14,6 +15,8 @@ import { Observable } from 'rxjs/Observable';
 export class UserDialogComponent implements OnInit {
 
   user: UserData;
+
+  @Language() lang: string;
 
   constructor(public dialogRef: MatDialogRef<UserDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any,

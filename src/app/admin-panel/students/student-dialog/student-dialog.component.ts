@@ -6,6 +6,7 @@ import { AlertService } from '../../../core/alert.service';
 import { StudentService } from '../../../students/shared/student.service';
 import { Observable } from 'rxjs/Observable';
 import { STUDY_PROGRAMMES } from '../../../shared/app.constants';
+import { Language } from 'angular-l10n';
 
 @Component({
   selector: 'app-student-dialog',
@@ -17,6 +18,8 @@ export class StudentDialogComponent implements OnInit {
   student: StudentData;
 
   studyProgrammes: string[];
+
+  @Language() lang: string;
 
   constructor(public dialogRef: MatDialogRef<StudentDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any,

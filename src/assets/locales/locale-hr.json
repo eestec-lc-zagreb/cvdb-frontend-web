@@ -48,5 +48,11 @@
   "UserUsernameText": "Korisničko ime",
   "UserCreatedAtText": "Datum kreiranja",
   "EditUserButtonText": "Uredi",
-  "AddNewUserButtonText": "Dodaj novog korisnika"
+  "AddNewUserButtonText": "Dodaj novog korisnika",
+  "SaveButtonText": "Spremi",
+  "CancelButtonText": "Odustani",
+  "ParticipantsText": "sudionika",
+  "MostStudentsStudyText": "Najviše studenata je na smjeru",
+  "MostStudentsAreText": "Najviše studenata je na",
+  "YearSmallText": "godini"
 }

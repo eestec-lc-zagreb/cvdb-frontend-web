@@ -5,6 +5,7 @@ import { EventService } from '../../../events/shared/event.service';
 import { EventData } from '../../../events/shared/event-data.model';
 import { AlertService } from '../../../core/alert.service';
 import { Observable } from 'rxjs/Observable';
+import { Language } from 'angular-l10n';
 
 @Component({
   selector: 'app-event-dialog',
@@ -14,6 +15,8 @@ import { Observable } from 'rxjs/Observable';
 export class EventDialogComponent implements OnInit {
 
   event: EventData;
+
+  @Language() lang: string;
 
   constructor(public dialogRef: MatDialogRef<EventDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any,
