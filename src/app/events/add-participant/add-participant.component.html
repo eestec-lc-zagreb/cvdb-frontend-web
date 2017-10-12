@@ -3,7 +3,7 @@
   mat-raised-button
   color="primary"
   (click)="onAddNewParticipant()">
-  Dodaj sudionike
+  {{ 'AddParticipantsText' | translate:lang }}
 </button>
 
 <form #form="ngForm" *ngIf="addParticipantMode" (submit)="onSubmit()">
@@ -12,7 +12,7 @@
       name="participant"
       ngModel
       #participant="ngModel"
-      placeholder="Odaberi studenta"
+      [placeholder]="'SelectStudentText' | translate:lang"
       (change)="onParticipantChange($event)"
       required>
 
@@ -39,6 +39,6 @@
     type="submit"
     color="primary"
     [disabled]="!form.valid || !fileList">
-    Dodaj
+    {{ 'AddText' | translate:lang }}
   </button>
 </form>

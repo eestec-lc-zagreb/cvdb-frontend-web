@@ -54,5 +54,8 @@
   "ParticipantsText": "participants",
   "MostStudentsStudyText": "Most students study",
   "MostStudentsAreText": "Most students are",
-  "YearSmallText": "year"
+  "YearSmallText": "year",
+  "AddText": "Add",
+  "AddParticipantsText": "Add participants",
+  "SelectStudentText": "Select student"
 }

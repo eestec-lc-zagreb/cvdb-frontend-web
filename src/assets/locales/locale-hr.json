@@ -54,5 +54,8 @@
   "ParticipantsText": "sudionika",
   "MostStudentsStudyText": "Najviše studenata je na smjeru",
   "MostStudentsAreText": "Najviše studenata je na",
-  "YearSmallText": "godini"
+  "YearSmallText": "godini",
+  "AddText": "Dodaj",
+  "AddParticipantsText": "Dodaj sudionike",
+  "SelectStudentText": "Odaberi studenta"
 }

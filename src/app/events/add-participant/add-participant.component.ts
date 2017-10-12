@@ -4,8 +4,8 @@ import { StudentService } from '../../students/shared/student.service';
 import { Page } from '../../shared/page.model';
 import { StudentData } from '../../students/shared/student-data.model';
 import { AlertService } from '../../core/alert.service';
-import { NgForm } from '@angular/forms';
 import { MatSelectChange } from '@angular/material/select';
+import { Language } from 'angular-l10n';
 
 @Component({
   selector: 'app-add-participant',
@@ -13,6 +13,8 @@ import { MatSelectChange } from '@angular/material/select';
   styleUrls: ['./add-participant.component.scss']
 })
 export class AddParticipantComponent implements OnInit {
+
+  @Language() lang: string;
 
   addParticipantMode: boolean;
 
