@@ -37,7 +37,7 @@ export class PasswordDialogComponent implements OnInit {
       .subscribe(
         response => {
           if (response.status === 204) {
-            this.alertService.success('Change password successful');
+            this.alertService.success('ChangePasswordSuccessMessage');
 
             this.dialogRef.close();
           } else {

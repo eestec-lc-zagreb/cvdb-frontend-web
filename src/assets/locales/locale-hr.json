@@ -57,5 +57,13 @@
   "YearSmallText": "godini",
   "AddText": "Dodaj",
   "AddParticipantsText": "Dodaj sudionike",
-  "SelectStudentText": "Odaberi studenta"
+  "SelectStudentText": "Odaberi studenta",
+  "UserDataUpdatedSuccessMessage": "Korisnički podaci uspješno ažurirani",
+  "ChangePasswordSuccessMessage": "Lozinka uspješno promijenjena",
+  "LoginSuccessMessage": "Uspješna prijava na sustav",
+  "LogoutSuccessMessage": "Uspješna odjava iz sustava",
+  "UserCreatedMessage": "Korisnik kreiran",
+  "UserUpdatedMessage": "Korisnik ažuriran",
+  "StudentCreatedMessage": "Student kreiran",
+  "StudentUpdatedMessage": "Student ažuriran"
 }

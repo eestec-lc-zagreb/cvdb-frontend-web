@@ -57,5 +57,13 @@
   "YearSmallText": "year",
   "AddText": "Add",
   "AddParticipantsText": "Add participants",
-  "SelectStudentText": "Select student"
+  "SelectStudentText": "Select student",
+  "UserDataUpdatedSuccessMessage": "User data updated",
+  "ChangePasswordSuccessMessage": "Change password successful",
+  "LoginSuccessMessage": "You are successfully logged in",
+  "LogoutSuccessMessage": "You successfully logged out",
+  "UserCreatedMessage": "User created",
+  "UserUpdatedMessage": "User updated",
+  "StudentCreatedMessage": "Student created",
+  "StudentUpdatedMessage": "Student updated"
 }

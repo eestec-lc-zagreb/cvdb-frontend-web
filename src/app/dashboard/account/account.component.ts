@@ -51,7 +51,7 @@ export class AccountComponent implements OnInit {
     this.userService.updateUser(this.user)
       .subscribe(
         (user: UserData) => {
-          this.alertService.success('User data updated');
+          this.alertService.success('UserDataUpdateMessage');
 
           this.loadingBarService.stop();
         },

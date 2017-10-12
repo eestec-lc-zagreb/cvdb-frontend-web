@@ -36,7 +36,7 @@ export class AuthenticationService {
           if (response.status === 200) {
             sessionStorage.removeItem('currentUser');
 
-            this.alertService.success('You successfully logged out');
+            this.alertService.success('LogoutSuccessMessage');
             this.router.navigate(['/login']);
           } else {
             this.alertService.error('Something went wrong');

@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
           console.log('You are successfully logged in as: ' + JSON.stringify(user));
           this.loadingBarService.stop();
 
-          this.alertService.success('You are successfully logged in');
+          this.alertService.success('LoginSuccessMessage');
           this.router.navigate([this.returnUrl]);
         },
         error => {

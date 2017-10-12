@@ -49,9 +49,9 @@ export class UserDialogComponent implements OnInit {
 
         let eventMessage;
         if (this.data.editMode) {
-          eventMessage = 'User updated';
+          eventMessage = 'UserUpdatedMessage';
         } else {
-          eventMessage = 'User created';
+          eventMessage = 'UserCreatedMessage';
         }
 
         this.alertService.success(eventMessage);

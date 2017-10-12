@@ -53,9 +53,9 @@ export class StudentDialogComponent implements OnInit {
 
         let eventMessage;
         if (this.data.editMode) {
-          eventMessage = 'Student updated';
+          eventMessage = 'StudentUpdatedMessage';
         } else {
-          eventMessage = 'Student created';
+          eventMessage = 'StudentCreatedMessage';
         }
 
         this.alertService.success(eventMessage);
