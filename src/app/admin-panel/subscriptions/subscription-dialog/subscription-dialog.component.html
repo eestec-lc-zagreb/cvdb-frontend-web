@@ -1,3 +1,85 @@
-<p>
-  subscription-dialog works!
-</p>
+<h2
+  *ngIf="data"
+  mat-dialog-title>
+  {{ data.title | translate:lang }}
+</h2>
+
+<mat-dialog-content>
+  <form #form="ngForm" (submit)="onSubmitSubscriptionData()">
+
+    <mat-input-container style="width: 100%">
+      <mat-select
+        name="user"
+        [placeholder]="'UserFullNameText' | translate:lang"
+        required
+        [(ngModel)]="subscription.userId">
+
+        <mat-option
+          *ngFor="let user of users"
+          [value]="user.id">
+          {{ user.name }}
+        </mat-option>
+
+      </mat-select>
+    </mat-input-container>
+
+    <mat-input-container style="width: 100%">
+      <mat-select
+        name="event"
+        [placeholder]="'SubscriptionEventNameText' | translate:lang"
+        required
+        [(ngModel)]="subscription.eventId">
+
+        <mat-option
+          *ngFor="let event of events"
+          [value]="event.id">
+          {{ event.name }}
+        </mat-option>
+
+      </mat-select>
+    </mat-input-container>
+
+
+      <mat-form-field>
+        <input
+          name="subscriptionStart"
+          matInput
+          [(ngModel)]="subscription.subscriptionStart"
+          [matDatepicker]="subscriptionStart"
+          [placeholder]="'SubscriptionStartText' | translate:lang"
+          required>
+        <mat-datepicker-toggle matSuffix [for]="subscriptionStart"></mat-datepicker-toggle>
+        <mat-datepicker #subscriptionStart></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          name="subscriptionEnd"
+          matInput
+          [(ngModel)]="subscription.subscriptionEnd"
+          [matDatepicker]="subscriptionEnd"
+          [placeholder]="'SubscriptionEndText' | translate:lang"
+          required>
+        <mat-datepicker-toggle matSuffix [for]="subscriptionEnd"></mat-datepicker-toggle>
+        <mat-datepicker #subscriptionEnd></mat-datepicker>
+      </mat-form-field>
+
+
+<div>
+    <button
+      mat-raised-button
+      type="submit"
+      color="primary"
+      [disabled]="!form.valid">
+      {{ 'SaveButtonText' | translate:lang }}
+    </button>
+
+    <button
+      mat-button
+      [mat-dialog-close]="false">
+      {{ 'CancelButtonText' | translate:lang }}
+    </button>
+</div>
+  </form>
+</mat-dialog-content>
+

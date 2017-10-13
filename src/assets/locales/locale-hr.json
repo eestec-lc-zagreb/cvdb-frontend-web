@@ -45,6 +45,7 @@
   "AddNewStudentButtonText": "Dodaj novog studenta",
   "UserListHeadingText": "Korisnici",
   "UserNameText": "Naziv",
+  "UserFullNameText": "Naziv korisnika",
   "UserUsernameText": "Korisničko ime",
   "UserCreatedAtText": "Datum kreiranja",
   "EditUserButtonText": "Uredi",

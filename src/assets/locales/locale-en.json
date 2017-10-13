@@ -45,6 +45,7 @@
   "AddNewStudentButtonText": "Add new student",
   "UserListHeadingText": "Users",
   "UserNameText": "Name",
+  "UserFullNameText": "User name",
   "UserUsernameText": "Username",
   "UserCreatedAtText": "Created at",
   "EditUserButtonText": "Edit",

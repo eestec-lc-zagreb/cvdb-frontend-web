@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import {
-  MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDialogModule,
+  MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule,
+  MatDialogModule,
   MatIconModule,
   MatInputModule,
-  MatListModule, MatMenuModule, MatPaginatorModule,
+  MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule,
   MatProgressBarModule,
   MatSelectModule,
   MatSidenavModule,
@@ -33,7 +34,9 @@ import { CdkTableModule } from '@angular/cdk/table';
     MatChipsModule,
     MatTableModule,
     CdkTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   exports: [
     MatButtonModule,
@@ -56,7 +59,9 @@ import { CdkTableModule } from '@angular/cdk/table';
     MatChipsModule,
     MatTableModule,
     CdkTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ]
 })
 export class MaterialDesignModule {

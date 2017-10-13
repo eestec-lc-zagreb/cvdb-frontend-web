@@ -3,7 +3,7 @@ import { SubscriptionAdminData } from '../shared/subscription-admin-data.model';
 import { UserData } from '../../../dashboard/shared/user-data.model';
 import { EventData } from '../../../events/shared/event-data.model';
 import { Language } from 'angular-l10n';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { DateAdapter, MAT_DIALOG_DATA, MatDialogRef, NativeDateAdapter } from '@angular/material';
 import { LoadingBarService } from '../../../core/shared/loading-bar.service';
 import { AlertService } from '../../../core/alert.service';
 import { SubscriptionsService } from '../../../dashboard/shared/subscriptions.service';
@@ -11,6 +11,7 @@ import { UserService } from '../../../users/shared/user.service';
 import { EventService } from '../../../events/shared/event.service';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/forkJoin';
+import { SubscriptionBasicData } from '../shared/subscription-basic-data.model';
 
 @Component({
   selector: 'app-subscription-dialog',
@@ -19,7 +20,7 @@ import 'rxjs/add/observable/forkJoin';
 })
 export class SubscriptionDialogComponent implements OnInit {
 
-  subscription: SubscriptionAdminData;
+  subscription: SubscriptionBasicData;
 
   users: UserData[];
   events: EventData[];
@@ -28,6 +29,7 @@ export class SubscriptionDialogComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<SubscriptionDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any,
+              private dateAdapter: DateAdapter<NativeDateAdapter>,
               private loadingBarService: LoadingBarService,
               private alertService: AlertService,
               private userService: UserService,
@@ -35,17 +37,22 @@ export class SubscriptionDialogComponent implements OnInit {
               private subscriptionService: SubscriptionsService) { }
 
   ngOnInit() {
-    this.subscription = new SubscriptionAdminData();
+    this.dateAdapter.setLocale('hr-HR');
+    this.subscription = new SubscriptionBasicData();
+    this.users = [];
+    this.events = [];
 
     if (this.data.editMode) {
       this.getSubscriptionData();
     }
+
+    this.getData();
   }
 
   onSubmitSubscriptionData() {
     this.loadingBarService.start();
 
-    let subscriptionDataObservable: Observable<SubscriptionAdminData>;
+    let subscriptionDataObservable: Observable<SubscriptionBasicData>;
 
     if (this.data.editMode) {
       subscriptionDataObservable = this.subscriptionService.updateSubscription(this.subscription);
@@ -54,7 +61,7 @@ export class SubscriptionDialogComponent implements OnInit {
     }
 
     subscriptionDataObservable.subscribe(
-      (subscriptionData: SubscriptionAdminData) => {
+      (subscriptionData: SubscriptionBasicData) => {
         this.subscriptionService.subscriptionChange.next(subscriptionData);
 
         let eventMessage;
@@ -83,7 +90,7 @@ export class SubscriptionDialogComponent implements OnInit {
   getSubscriptionData() {
     this.subscriptionService.getSubscription(this.data.subscriptionId)
       .subscribe(
-        (subscription: SubscriptionAdminData) => {
+        (subscription: SubscriptionBasicData) => {
           this.subscription = subscription;
 
         },
@@ -95,7 +102,18 @@ export class SubscriptionDialogComponent implements OnInit {
   }
 
   getData() {
-    Observable.forkJoin(); // TODO
+    Observable.forkJoin(
+      this.userService.getAllUsers(),
+      this.eventService.getAllEvents()
+    ).subscribe(
+      values => {
+        this.users = values[0].content;
+        this.events = values[1].content;
+      },
+      error => {
+        this.alertService.error(error);
+      }
+    );
   }
 
 }

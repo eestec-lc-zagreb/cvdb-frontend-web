@@ -5,30 +5,31 @@ import { HttpClient } from '../../core/shared/http-client.service';
 import { Page } from '../../shared/page.model';
 import { SubscriptionAdminData } from '../../admin-panel/subscriptions/shared/subscription-admin-data.model';
 import { Subject } from 'rxjs/Subject';
+import { SubscriptionBasicData } from '../../admin-panel/subscriptions/shared/subscription-basic-data.model';
 
 @Injectable()
 export class SubscriptionsService {
 
   subscriptionsSubject: Subject<SubscriptionAdminData[]> = new Subject<SubscriptionAdminData[]>();
 
-  subscriptionChange: Subject<SubscriptionAdminData> = new Subject<SubscriptionAdminData>();
+  subscriptionChange: Subject<SubscriptionBasicData> = new Subject<SubscriptionBasicData>();
 
   constructor(private http: HttpClient) {}
 
-  createSubscription(subscriptionData: SubscriptionAdminData): Observable<SubscriptionAdminData> {
+  createSubscription(subscriptionData: SubscriptionBasicData): Observable<SubscriptionBasicData> {
     return this.http.post('/api/v1/subscriptions', subscriptionData)
       .map(
         (response: Response) => {
-          return <SubscriptionAdminData>response.json();
+          return <SubscriptionBasicData>response.json();
         }
       );
   }
 
-  updateSubscription(subscriptionData: SubscriptionAdminData): Observable<SubscriptionAdminData> {
+  updateSubscription(subscriptionData: SubscriptionBasicData): Observable<SubscriptionBasicData> {
     return this.http.put(`/api/v1/subscriptions/${subscriptionData.id}`, subscriptionData)
       .map(
         (response: Response) => {
-          return <SubscriptionAdminData>response.json();
+          return <SubscriptionBasicData>response.json();
         }
       );
   }
@@ -66,11 +67,11 @@ export class SubscriptionsService {
       );
   }
 
-  getSubscription(id: number): Observable<SubscriptionAdminData> {
+  getSubscription(id: number): Observable<SubscriptionBasicData> {
     return this.http.get(`/api/v1/subscriptions/${id}`)
       .map(
         (response: Response) => {
-          return <SubscriptionAdminData>response.json();
+          return <SubscriptionBasicData>response.json();
         }
       );
   }
