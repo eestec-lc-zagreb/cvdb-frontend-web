@@ -1,3 +1,68 @@
-<p>
-  subscription-list works!
-</p>
+<h2>{{ 'SubscriptionListHeadingText' | translate:lang }}</h2>
+
+<button
+  mat-raised-button
+  color="primary"
+  (click)="onOpenSubscriptionDialog(false)">
+  {{ 'AddNewSubscriptionButtonText' | translate:lang }}
+</button>
+
+<br />
+<br />
+
+<div class="mat-elevation-z8">
+  <mat-table #table [dataSource]="subscriptionsDataSource">
+
+    <ng-container cdkColumnDef="name">
+      <mat-header-cell *cdkHeaderCellDef> {{ 'UserNameText' | translate:lang }} </mat-header-cell>
+      <mat-cell *cdkCellDef="let row"> {{row.name}} </mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="username">
+      <mat-header-cell *cdkHeaderCellDef> {{ 'UserUsernameText' | translate:lang }} </mat-header-cell>
+      <mat-cell *cdkCellDef="let row"> {{row.username}} </mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="eventName">
+      <mat-header-cell *cdkHeaderCellDef> {{ 'SubscriptionEventNameText' | translate:lang }} </mat-header-cell>
+      <mat-cell *cdkCellDef="let row"> {{row.eventName}} </mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="eventYear">
+      <mat-header-cell *cdkHeaderCellDef> {{ 'EventYearText' | translate:lang }} </mat-header-cell>
+      <mat-cell *cdkCellDef="let row"> {{row.eventYear}} </mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="subscriptionStart">
+      <mat-header-cell *cdkHeaderCellDef> {{ 'SubscriptionStartText' | translate:lang }} </mat-header-cell>
+      <mat-cell *cdkCellDef="let row"> {{row.subscriptionStart | date:'dd.MM.yyyy. HH:mm'}} </mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="subscriptionEnd">
+      <mat-header-cell *cdkHeaderCellDef> {{ 'SubscriptionEndText' | translate:lang }} </mat-header-cell>
+      <mat-cell *cdkCellDef="let row"> {{row.subscriptionEnd | date:'dd.MM.yyyy. HH:mm'}} </mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="actions">
+      <mat-header-cell *cdkHeaderCellDef></mat-header-cell>
+      <mat-cell *cdkCellDef="let row">
+        <button
+          mat-raised-button
+          color="accent"
+          (click)="onOpenSubscriptionDialog(true, row.id)">
+          {{ 'EditSubscriptionButtonText' | translate:lang }}
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *cdkHeaderRowDef="['name', 'username', 'eventName', 'eventYear', 'subscriptionStart', 'subscriptionEnd', 'actions']"></mat-header-row>
+
+    <mat-row *cdkRowDef="let row; columns: ['name', 'username', 'eventName', 'eventYear', 'subscriptionStart', 'subscriptionEnd', 'actions']"></mat-row>
+  </mat-table>
+
+  <mat-paginator [length]="pagination.length"
+                 [pageSize]="pagination.pageSize"
+                 [pageSizeOptions]="pagination.defaultPageSizeOptions()"
+                 (page)="onPageOptionsChange($event)">
+  </mat-paginator>
+</div>

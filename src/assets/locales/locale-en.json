@@ -66,5 +66,11 @@
   "UserUpdatedMessage": "User updated",
   "StudentCreatedMessage": "Student created",
   "StudentUpdatedMessage": "Student updated",
-  "SubscriptionsTabText": "Subscriptions"
+  "SubscriptionsTabText": "Subscriptions",
+  "SubscriptionEventNameText": "Event name",
+  "SubscriptionStartText": "Start",
+  "SubscriptionEndText": "End",
+  "SubscriptionListHeadingText": "Subscriptions",
+  "AddNewSubscriptionButtonText": "Add new subscription",
+  "EditSubscriptionButtonText": "Edit subscription"
 }

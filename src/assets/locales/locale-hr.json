@@ -66,5 +66,11 @@
   "UserUpdatedMessage": "Korisnik ažuriran",
   "StudentCreatedMessage": "Student kreiran",
   "StudentUpdatedMessage": "Student ažuriran",
-  "SubscriptionsTabText": "Pretplate"
+  "SubscriptionsTabText": "Pretplate",
+  "SubscriptionEventNameText": "Naziv događaja",
+  "SubscriptionStartText": "Početak",
+  "SubscriptionEndText": "Kraj",
+  "SubscriptionListHeadingText": "Pretplate",
+  "AddNewSubscriptionButtonText": "Dodaj novu pretplatu",
+  "EditSubscriptionButtonText": "Uredi pretplatu"
 }
