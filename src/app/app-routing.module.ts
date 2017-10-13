@@ -11,6 +11,7 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { UsersComponent } from './admin-panel/users/users.component';
 import { StudentsComponent } from './admin-panel/students/students.component';
 import { EventsComponent } from './admin-panel/events/events.component';
+import { SubscriptionsComponent } from './admin-panel/subscriptions/subscriptions.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
       {path: 'users', component: UsersComponent},
       {path: 'students', component: StudentsComponent},
       {path: 'events', component: EventsComponent},
+      {path: 'subscriptions', component: SubscriptionsComponent}
     ]}
   ]},
   {path: '**', redirectTo: '/dashboard'}

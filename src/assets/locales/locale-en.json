@@ -65,5 +65,6 @@
   "UserCreatedMessage": "User created",
   "UserUpdatedMessage": "User updated",
   "StudentCreatedMessage": "Student created",
-  "StudentUpdatedMessage": "Student updated"
+  "StudentUpdatedMessage": "Student updated",
+  "SubscriptionsTabText": "Subscriptions"
 }

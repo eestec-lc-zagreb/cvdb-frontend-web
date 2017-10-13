@@ -38,6 +38,8 @@ import { StudentDialogComponent } from './admin-panel/students/student-dialog/st
 import { UserService } from './users/shared/user.service';
 import { UserDialogComponent } from './admin-panel/users/user-dialog/user-dialog.component';
 import { AddParticipantComponent } from './events/add-participant/add-participant.component';
+import { SubscriptionsComponent } from './admin-panel/subscriptions/subscriptions.component';
+import { SubscriptionListComponent } from './admin-panel/subscriptions/subscription-list/subscription-list.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +64,9 @@ import { AddParticipantComponent } from './events/add-participant/add-participan
     StudentListComponent,
     StudentDialogComponent,
     UserDialogComponent,
-    AddParticipantComponent
+    AddParticipantComponent,
+    SubscriptionsComponent,
+    SubscriptionListComponent
   ],
   imports: [
     BrowserModule,

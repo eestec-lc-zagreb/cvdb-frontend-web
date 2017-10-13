@@ -114,8 +114,7 @@ export class StudentListComponent implements OnInit, OnDestroy {
 
 }
 
-export class StudentsDataSource
-  extends DataSource<StudentData> {
+export class StudentsDataSource extends DataSource<StudentData> {
 
   constructor(private studentService: StudentService) {
     super();

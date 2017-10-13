@@ -30,6 +30,11 @@ export class AdminPanelComponent implements OnInit {
         id: 'events',
         label: 'EventsTabText',
         navLink: '/dashboard/admin/events'
+      },
+      {
+        id: 'subscriptions',
+        label: 'SubscriptionsTabText',
+        navLink: '/dashboard/admin/subscriptions'
       }
     ];
   }
