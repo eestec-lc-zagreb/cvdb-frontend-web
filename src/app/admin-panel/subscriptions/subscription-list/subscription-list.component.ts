@@ -5,11 +5,12 @@ import { Language } from 'angular-l10n';
 import { DataSource } from '@angular/cdk/collections';
 import { SubscriptionsService } from '../../../dashboard/shared/subscriptions.service';
 import { Observable } from 'rxjs/Observable';
-import { LoadingBarService } from "app/core/shared/loading-bar.service";
+import { LoadingBarService } from 'app/core/shared/loading-bar.service';
 import { AlertService } from '../../../core/alert.service';
-import { MatDialog, PageEvent } from '@angular/material';
-import { Subscription } from "rxjs/Subscription";
-import { Page } from "app/shared/page.model";
+import { MatDialog, MatDialogRef, PageEvent } from '@angular/material';
+import { Subscription } from 'rxjs/Subscription';
+import { Page } from 'app/shared/page.model';
+import { SubscriptionDialogComponent } from '../subscription-dialog/subscription-dialog.component';
 
 @Component({
   selector: 'app-subscription-list',
@@ -76,20 +77,20 @@ export class SubscriptionListComponent implements OnInit, OnDestroy {
       );
   }
 
-  // onOpenStudentDialog(editMode: boolean, studentId?: number) {
-  //   this.openStudentDialog(editMode, studentId);
-  // }
-  //
-  // private openStudentDialog(editMode: boolean, studentId?: number): MatDialogRef<StudentDialogComponent> {
-  //   return this.dialog.open(StudentDialogComponent, {
-  //     data: {
-  //       title: editMode ? 'EditStudentButtonText' : 'AddNewStudentButtonText',
-  //       editMode: editMode,
-  //       studentId: studentId
-  //     },
-  //     disableClose: true
-  //   });
-  // }
+  onOpenSubscriptionDialog(editMode: boolean, subscriptionId?: number) {
+    this.openSubscriptionDialog(editMode, subscriptionId);
+  }
+
+  private openSubscriptionDialog(editMode: boolean, subscriptionId?: number): MatDialogRef<SubscriptionDialogComponent> {
+    return this.dialog.open(SubscriptionDialogComponent, {
+      data: {
+        title: editMode ? 'EditSubscriptionButtonText' : 'AddNewSubscriptionButtonText',
+        editMode: editMode,
+        subscriptionId: subscriptionId
+      },
+      disableClose: true
+    });
+  }
 
 }
 

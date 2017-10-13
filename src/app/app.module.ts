@@ -40,6 +40,7 @@ import { UserDialogComponent } from './admin-panel/users/user-dialog/user-dialog
 import { AddParticipantComponent } from './events/add-participant/add-participant.component';
 import { SubscriptionsComponent } from './admin-panel/subscriptions/subscriptions.component';
 import { SubscriptionListComponent } from './admin-panel/subscriptions/subscription-list/subscription-list.component';
+import { SubscriptionDialogComponent } from './admin-panel/subscriptions/subscription-dialog/subscription-dialog.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { SubscriptionListComponent } from './admin-panel/subscriptions/subscript
     UserDialogComponent,
     AddParticipantComponent,
     SubscriptionsComponent,
-    SubscriptionListComponent
+    SubscriptionListComponent,
+    SubscriptionDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -94,7 +96,8 @@ import { SubscriptionListComponent } from './admin-panel/subscriptions/subscript
     PasswordDialogComponent,
     EventDialogComponent,
     StudentDialogComponent,
-    UserDialogComponent
+    UserDialogComponent,
+    SubscriptionDialogComponent
   ],
   bootstrap: [AppComponent]
 })

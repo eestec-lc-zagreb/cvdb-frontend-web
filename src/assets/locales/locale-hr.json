@@ -72,5 +72,7 @@
   "SubscriptionEndText": "Kraj",
   "SubscriptionListHeadingText": "Pretplate",
   "AddNewSubscriptionButtonText": "Dodaj novu pretplatu",
-  "EditSubscriptionButtonText": "Uredi pretplatu"
+  "EditSubscriptionButtonText": "Uredi pretplatu",
+  "SubscriptionUpdatedMessage": "Pretplata ažurirana",
+  "SubscriptionCreatedMessage": "Pretplata kreirana"
 }

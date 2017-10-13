@@ -72,5 +72,7 @@
   "SubscriptionEndText": "End",
   "SubscriptionListHeadingText": "Subscriptions",
   "AddNewSubscriptionButtonText": "Add new subscription",
-  "EditSubscriptionButtonText": "Edit subscription"
+  "EditSubscriptionButtonText": "Edit subscription",
+  "SubscriptionUpdatedMessage": "Subscription updated",
+  "SubscriptionCreatedMessage": "Subscription created"
 }

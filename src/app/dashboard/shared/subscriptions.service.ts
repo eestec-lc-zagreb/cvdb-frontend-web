@@ -5,7 +5,6 @@ import { HttpClient } from '../../core/shared/http-client.service';
 import { Page } from '../../shared/page.model';
 import { SubscriptionAdminData } from '../../admin-panel/subscriptions/shared/subscription-admin-data.model';
 import { Subject } from 'rxjs/Subject';
-import { SubscriptionData } from './subscription-data.model';
 
 @Injectable()
 export class SubscriptionsService {
@@ -16,20 +15,20 @@ export class SubscriptionsService {
 
   constructor(private http: HttpClient) {}
 
-  createSubscription(subscriptionData: SubscriptionAdminData): Observable<SubscriptionData> {
+  createSubscription(subscriptionData: SubscriptionAdminData): Observable<SubscriptionAdminData> {
     return this.http.post('/api/v1/subscriptions', subscriptionData)
       .map(
         (response: Response) => {
-          return <SubscriptionData>response.json();
+          return <SubscriptionAdminData>response.json();
         }
       );
   }
 
-  updateSubscription(subscriptionData: SubscriptionAdminData): Observable<SubscriptionData> {
+  updateSubscription(subscriptionData: SubscriptionAdminData): Observable<SubscriptionAdminData> {
     return this.http.put(`/api/v1/subscriptions/${subscriptionData.id}`, subscriptionData)
       .map(
         (response: Response) => {
-          return <SubscriptionData>response.json();
+          return <SubscriptionAdminData>response.json();
         }
       );
   }
